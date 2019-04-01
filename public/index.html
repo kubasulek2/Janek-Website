@@ -1,115 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-    <title>Find Recipe</title>
+    <title>Janek Pietrzak</title>
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
-    <script src="https://developer.edamam.com/attribution/badge.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta name="author" content="Kuba Sułkowski">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 </head>
 <body>
-<div class="jumbotron jumbotron-fluid text-white text-center mb-5">
-    <h1 class="display-2">Find Recipe</h1>
-    <p class="lead">Click the fridge to open it!</p>
-</div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-sm-10 col-lg-6 col-xl-5  offset-sm-1 offset-lg-0  offset-xl-1 ">
-            <div class="wrapper m-auto position-relative fridge">
-                <div class="shelf shelf-1">
-                    <div class="btn-group">
-                        <button  class="btn my-3 restriction btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">No filter</button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="javascript:void(0)">No restriction</a>
-                            <a class="dropdown-item" href="javascript:void(0)">Vegetarian</a>
-                            <a class="dropdown-item" href="javascript:void(0)">Vegan</a>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <button  class="btn my-3 filter btn-secondary btn-md dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">No filter</button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="javascript:void(0)">No filter</a>
-                            <a class="dropdown-item" href="javascript:void(0)">Balanced</a>
-                            <a class="dropdown-item" href="javascript:void(0)">Low-fat</a>
-                            <a class="dropdown-item" href="javascript:void(0)">High-protein</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="shelf shelf-2">
-                    <div class="wrap"><input spellcheck="false" type="text" id="ingredient-1" placeholder="ingredient 1" class="form-control    "><i class="far fa-times-circle"></i></div>
-                    <div class="wrap"><input spellcheck="false" type="text" id="ingredient-2" placeholder="ingredient 2" class="form-control    "><i class="far fa-times-circle"></i></div>
-                    <div class="wrap"><input spellcheck="false" type="text" id="ingredient-3" placeholder="ingredient 3" class="form-control    "><i class="far fa-times-circle"></i></div>
-                </div>
-                <div class="shelf shelf-3">
-                    <button class="btn btn-secondary lucky my-3">Try luck</button>
-                    <button class="btn btn-secondary search my-3">Go for it!</button>
-                </div>
-                <img src="images/fridge.jpg" class="img-fluid" alt="fridge">
-                <div class="door door-left">
-                    <div class="handle handle-left"></div>
-                </div>
-                <div class="door door-right">
-                    <div class="handle handle-right"></div>
-                </div>
-            </div>
-        </div>
-        <div id="card" class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4 offset-sm-1 offset-md-2 offset-lg-1 mt-5 mt-lg-0">
-            <div class="card">
-                <div class="card-header font-weight-bold mb-1">
-                    Your recipe
-                </div>
-                <div class="image">
-                    <div class="card-image"></div>
-                </div>
-                <div class="card-body text-muted">
-                    <h5 class="card-title p-2 mb-1"></h5>
-                    <div class="group-info justify-content-center">
-                        <button class="btn btn-prev">
-                            <i class="fas fa-chevron-left"></i>
-                            Prev
-                        </button>
-                        <div class="index"></div>
-                        <button class="btn btn-next">
-                            Next
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                    <div class="card-text mt-4">
-                        <ul class="ingredients">
-                        </ul>
-
-                        <div class="group-info">
-                            <div class="info-1"></div>
-                            <div class="info-2"></div>
-                        </div>
-                        <div class="group-info justify-content-center">
-                            <a href=""class="btn" target="_blank">link</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row footer">
-        <div class="col-6 col-sm-5 col-md-5 col-lg-6 col-xl-5 offset-sm-1 offset-lg-0 offset-xl-1">
-            <div class="copy mt-3 text-left float-left text-muted">&#169;&nbsp;Copyright kubasulek2</div>
-            </div>
-        <div class="col-6 col-sm-5 col-lg-6 col-xl-5">
-            <div class="mt-1 text-right float-right" id="edamam-badge">
-            </div>
-        </div>
-        <div class="d-none d-sm-block col-sm-1 d-lg-none d-xl-block col-xl-1"></div>
-    </div>
-
-</div>
+<div class="main-container"></div>
 
 
 <script src="js/vendor/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
