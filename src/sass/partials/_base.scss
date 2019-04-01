@@ -1,0 +1,47 @@
+body{
+  background: lighten($salmon, 12%);
+}
+.container-fluid {
+}
+.jumbotron{
+  max-height: 14rem;
+  background: $salmon;
+  @include mQ(nth($breakPoints, 1)){
+    padding: 2rem 1rem;
+
+  }
+  @include mQ(nth($breakPoints, 2)){
+    padding: 2rem 1rem;
+  }
+  @include mQ(nth($breakPoints, 3)){
+    padding: 2rem 1rem;
+  }
+  @include mQ(nth($breakPoints, 4)){
+    padding: 2rem 1rem;
+  }
+  .display-2{
+    font-size: 3rem;
+
+    @include mQ(nth($breakPoints, 1)){
+      font-size: 5.5rem;
+    }
+  }
+
+  p{
+    font-size: 1.6rem;
+  }
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  #edamam-badge {
+    background: lighten($salmon, 12%);
+  }
+  .copy {
+  }
+}
+
+
+
+
