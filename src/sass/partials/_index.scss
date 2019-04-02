@@ -69,7 +69,7 @@ main.main-container{
     .projects, .contact, .vortex{
       padding: 0;
       height: 30.9%;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       li{
         display: inline-block;
         border-bottom: .1rem solid black;
@@ -92,12 +92,18 @@ main.main-container{
 
     .logo{
       display: block;
-      left: 28%;
+      left: 34%;
+      top: 14%;
+      z-index: 2;
+      width: 16%;
+      img{
+        width: 100%;
+      }
     }
 
     .projects{
       left: 20.05%;
-      top: 53.9%;
+      top: 46.21%;
       width: 20.01%;
       padding: 1.2em 0 0 1em;
 
@@ -105,12 +111,19 @@ main.main-container{
 
     .contact{
       background: url("../../images/composition/square-white.png");
-      right: 0;
+      left: 56%;
+      top: 23.15%;
+      width: 16%;
+      padding: 1em 0 0 1.2em;
+
 
     }
 
     .vortex{
-      right: 0;
+      left: 71.95%;
+      top: 53.85%;
+      width: 16%;
+      padding: 1.2em 1.2em 0 1.2em;
     }
   }
   @include mQ(1200px) {
@@ -118,7 +131,7 @@ main.main-container{
       font-size: .8rem;
     }
     .projects, .contact, .vortex{
-      font-size: 1.3rem;
+      font-size: 1.35rem;
     }
   }
   @include mQ(1300px) {
@@ -126,7 +139,7 @@ main.main-container{
       font-size: .9rem;
     }
     .projects, .contact, .vortex{
-      font-size: 1.35rem;
+      font-size: 1.45rem;
     }
   }
   @include mQ(1400px) {
@@ -134,7 +147,7 @@ main.main-container{
       font-size: 1rem;
     }
     .projects, .contact, .vortex{
-      font-size: 1.45rem;
+      font-size: 1.55rem;
     }
   }
   @include mQ(1500px) {
@@ -142,12 +155,12 @@ main.main-container{
       font-size: 1.1rem;
     }
     .projects, .contact, .vortex{
-      font-size: 1.55rem;
+      font-size: 1.65rem;
     }
   }
   @include mQ(1600px) {
     .projects, .contact, .vortex{
-      font-size: 1.6rem;
+      font-size: 1.7rem;
     }
   }
   @include mQ(1700px) {
@@ -155,12 +168,12 @@ main.main-container{
       font-size: 1.2rem;
     }
     .projects, .contact, .vortex{
-      font-size: 1.7rem;
+      font-size: 1.8rem;
     }
   }
   @include mQ(1800px) {
     .projects, .contact, .vortex{
-      font-size: 1.8rem;
+      font-size: 1.9rem;
     }
   }
   @include mQ(1900px) {
