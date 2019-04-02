@@ -2,7 +2,7 @@
 main.main-container{
   //for mobile
 
-  div.logo{
+  .author{
     width: 65%;
     margin: 2rem 0 0 30%;
     display: flex;
@@ -10,10 +10,11 @@ main.main-container{
     align-items: center;
     font-weight: 300;
     font-size: 5vw;
-    div.pietrzak{
+    .pietrzak{
       width: 70%;
 
     }
+
     div.blob{
       width: 15%;
       margin-right: 1rem;
@@ -22,7 +23,9 @@ main.main-container{
       }
     }
   }
-
+  .logo{
+    display: none;
+  }
   .projects, .contact, .vortex{
     font-size: 5vw;
     li{
@@ -32,25 +35,140 @@ main.main-container{
     }
   }
 
-  nav.projects{
+  .projects{
     padding: 4vw 0 9vw 3vw;
     width: 45%;
     margin: 5rem 0 0 40%;
-    background: url("../../images/mobile/Prostokąt-faktura-mobilna.png");
+    background: url("../../images/composition/Prostokąt-faktura.png");
   }
 
-  div.contact{
+  .contact{
     padding: 4vw 0 22vw 3vw;
     width: 36%;
     margin: 3rem 0 0 18%;
     background: url("../../images/mobile/Prostokąt-blekitny-mobilna.png");
   }
 
-  div.vortex{
+  .vortex{
     text-align: center;
     padding: 4vw 0 1vw 0;
     width: 34%;
     margin: 3rem 0 4rem 50%;
     background: url("../../images/composition/Prostokąt 1.png");
+  }
+
+  // for wider screens
+
+  @include mQ(1024px){
+
+    .projects, .logo, .author, .contact, .vortex{
+      position: absolute;
+      margin: 0;
+    }
+
+    .projects, .contact, .vortex{
+      padding: 0;
+      height: 30.9%;
+      font-size: 1.1rem;
+      li{
+        display: inline-block;
+        border-bottom: .1rem solid black;
+        margin-bottom: .8vh;
+      }
+    }
+
+    .author{
+      width: 12.1%;
+      top: 7%;
+      font-size: .7rem;
+      .pietrzak{
+        text-align: center;
+        width: 100%;
+      }
+      .blob{
+        display: none;
+      }
+    }
+
+    .logo{
+      display: block;
+      left: 28%;
+    }
+
+    .projects{
+      left: 20.05%;
+      top: 53.9%;
+      width: 20.01%;
+      padding: 1.2em 0 0 1em;
+
+    }
+
+    .contact{
+      background: url("../../images/composition/square-white.png");
+      right: 0;
+
+    }
+
+    .vortex{
+      right: 0;
+    }
+  }
+  @include mQ(1200px) {
+    .author{
+      font-size: .8rem;
+    }
+    .projects, .contact, .vortex{
+      font-size: 1.3rem;
+    }
+  }
+  @include mQ(1300px) {
+    .author{
+      font-size: .9rem;
+    }
+    .projects, .contact, .vortex{
+      font-size: 1.35rem;
+    }
+  }
+  @include mQ(1400px) {
+    .author{
+      font-size: 1rem;
+    }
+    .projects, .contact, .vortex{
+      font-size: 1.45rem;
+    }
+  }
+  @include mQ(1500px) {
+    .author{
+      font-size: 1.1rem;
+    }
+    .projects, .contact, .vortex{
+      font-size: 1.55rem;
+    }
+  }
+  @include mQ(1600px) {
+    .projects, .contact, .vortex{
+      font-size: 1.6rem;
+    }
+  }
+  @include mQ(1700px) {
+    .author{
+      font-size: 1.2rem;
+    }
+    .projects, .contact, .vortex{
+      font-size: 1.7rem;
+    }
+  }
+  @include mQ(1800px) {
+    .projects, .contact, .vortex{
+      font-size: 1.8rem;
+    }
+  }
+  @include mQ(1900px) {
+    .author{
+      font-size: 1.3rem;
+    }
+    .projects, .contact, .vortex{
+      font-size: 1.9rem;
+    }
   }
 }
