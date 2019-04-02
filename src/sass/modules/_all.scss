@@ -1,11 +1,4 @@
-@mixin mQ($width) {
-  @media (min-width: $width) {
-    @content
-  }
-}
-@mixin grid-height($width){
-  height: calc(#{$width} * .505);
-}
+
 *{
   margin: 0;
   padding: 0;
