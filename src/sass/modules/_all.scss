@@ -9,8 +9,12 @@ html{
   height: 100%;
 }
 body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  font-family: 'Untitled Sans Test';
+  text-transform: uppercase;
+  @include mQ(1024px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
 }
