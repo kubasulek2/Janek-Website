@@ -1,5 +1,5 @@
 
-div.main-container{
+main.main-container{
   //for mobile
 
   div.logo{
@@ -21,5 +21,36 @@ div.main-container{
         width: 100%;
       }
     }
+  }
+
+  .projects, .contact, .vortex{
+    font-size: 5vw;
+    li{
+      display: inline-block;
+      border-bottom: .4vw solid black;
+      margin-bottom: .8vh;
+    }
+  }
+
+  nav.projects{
+    padding: 4vw 0 9vw 3vw;
+    width: 45%;
+    margin: 5rem 0 0 40%;
+    background: url("../../images/mobile/Prostokąt-faktura-mobilna.png");
+  }
+
+  div.contact{
+    padding: 4vw 0 22vw 3vw;
+    width: 36%;
+    margin: 3rem 0 0 18%;
+    background: url("../../images/mobile/Prostokąt-blekitny-mobilna.png");
+  }
+
+  div.vortex{
+    text-align: center;
+    padding: 4vw 0 1vw 0;
+    width: 34%;
+    margin: 3rem 0 4rem 50%;
+    background: url("../../images/composition/Prostokąt 1.png");
   }
 }
