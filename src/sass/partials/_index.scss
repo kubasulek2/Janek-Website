@@ -3,7 +3,7 @@ main.main-container{
   //for mobile
 
   .author{
-    width: 65%;
+    width: 70%;
     margin: 2rem 0 0 30%;
     display: flex;
     justify-content: space-between;
@@ -12,10 +12,11 @@ main.main-container{
     font-size: 5vw;
     .pietrzak{
       width: 70%;
+      word-spacing: .3em;
 
     }
 
-    div.blob{
+    .blob{
       width: 15%;
       margin-right: 1rem;
       img{

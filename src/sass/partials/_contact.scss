@@ -1,0 +1,112 @@
+//.author styles in index.scss
+
+.main-container{
+
+  // for mobile
+
+  .contact-details{
+    width: 85%;
+    background: url("../../images/contact/Prostokąt-faktura_kontakt.png");
+    text-decoration: underline;
+    margin: 4em auto;
+    padding: 2.2em;
+
+    p{
+      font-size: 4.5vw;
+      margin-bottom: .3em;
+
+      &:first-child, &:nth-child(4){
+        margin-bottom: 1.4em;
+      }
+    }
+  }
+  .blob-large{
+    width: 48%;
+    margin-left: 44.5%;
+    img{
+      width: 100%;
+    }
+  }
+
+  // for larger screens
+
+  @include mQ(1024px){
+    .contact-details, .blob-large{
+      position: absolute;
+      margin: 0;
+    }
+    .contact-details{
+      width: 36.1%;
+      height: 46.15%;
+      top: 23.15%;
+      left: 20%;
+
+      p{
+        font-size: 1.2rem;
+      }
+    }
+    .blob-large{
+      width: 22%;
+      left:63%;
+      top: 55%;
+    }
+  }
+  @include mQ(1200px) {
+    .contact-details{
+      p{
+        font-size: 1.35rem;
+      }
+    }
+  }
+  @include mQ(1300px) {
+    .contact-details{
+      p{
+        font-size: 1.45rem;
+      }
+    }
+  }
+  @include mQ(1400px) {
+    .contact-details{
+      p{
+        font-size: 1.55rem;
+      }
+    }
+  }
+  @include mQ(1500px) {
+    .contact-details{
+      p{
+        font-size: 1.65rem;
+      }
+    }
+  }
+  @include mQ(1600px) {
+    .contact-details{
+      p{
+        font-size: 1.7rem;
+      }
+    }
+  }
+  @include mQ(1700px) {
+    .contact-details{
+      p{
+        font-size: 1.8rem;
+      }
+    }
+  }
+  @include mQ(1800px) {
+    .contact-details{
+      p{
+        font-size: 1.9rem;
+      }
+    }
+  }
+  @include mQ(1900px) {
+    .contact-details{
+      p{
+        font-size: 1.9rem;
+      }
+    }
+  }
+}
+
+
