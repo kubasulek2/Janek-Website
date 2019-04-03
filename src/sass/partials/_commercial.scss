@@ -1,16 +1,8 @@
 .main-container{
 
+//for mobile
   .projects.commercial{
     display: none;
-
-    @include mQ(1024px){
-      display: block;
-      top: 15.35%;
-
-      li:last-child, li:first-child{
-       border-bottom: none;
-      }
-    }
   }
 
   .image {
@@ -25,10 +17,10 @@
       width: 40%;
 
       &.right{
-        margin-left: 50%;
+        margin-left: 40%;
       }
       &.left{
-        margin-left: 10%;
+        margin-left: 12%;
       }
       &.center{
         margin-left: 30%;
@@ -62,6 +54,40 @@
      }
     img {
       width: 100%;
+
+
+    }
+  }
+
+//for larger screens
+
+  @include mQ(1024px){
+    .projects.commercial{
+      display: block;
+      top: 15.35%;
+
+      li:last-child, li:first-child{
+        border-bottom: none;
+      }
+    }
+  }
+  .image{
+    display: none;
+    margin: 0!important;
+    position: absolute;
+
+    &[data-image="2"]{
+      display: block;
+    }
+
+    &:nth-of-type(odd){
+      top: 53.9%;
+      left: 28%;
+    }
+
+    &:nth-of-type(even){
+      top: 7.8%;
+      left: 52%;
     }
   }
 }
