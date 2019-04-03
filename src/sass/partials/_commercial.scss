@@ -76,13 +76,13 @@
       margin: 0!important;
       position: absolute;
 
-      &[data-image="6"]{
+     /* &[data-image="2"]{
         display: block;
       }
-      &[data-image="1"]{
+      &[data-image="3"]{
         display: block;
       }
-
+*/
       &:nth-of-type(odd){
         top: 53.9%;
         left: 28%;
@@ -124,22 +124,22 @@
     }
     .nav-right{
       .prev{
-        top: 77%;
-        left: 12.1%;
-      }
-      .next{
-        top: 69.2%;
-        left: 20.1%;
-      }
-    }
-    .nav-left{
-      .prev{
         left: 83.95%;
         top: 15.5%
       }
       .next{
         left: 83.95%;
         top: 38.55%;
+      }
+    }
+    .nav-left{
+      .prev{
+        top: 77%;
+        left: 12.1%;
+      }
+      .next{
+        top: 69.2%;
+        left: 20.1%;
       }
     }
   }
