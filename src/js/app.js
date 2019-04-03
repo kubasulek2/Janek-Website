@@ -1,5 +1,20 @@
 $(() => {
+// refresh on resize
+  const mobileViewport = window.matchMedia("screen and (max-width: 1023px)");
 
+  mobileViewport.addListener(function(mq) {
+
+    if(mq.matches) {
+      // viewport <= 1023px
+      location.reload()
+    } else {
+      // viewport > 1023px
+      location.reload();
+    }
+
+  });
+
+// handling left and right side galleries
   const handleLeftGallery = (index, images)=>{
     let counter = index;
 

@@ -12,7 +12,19 @@
     &:first-of-type{
       margin-top: 6rem;
     }
+    &.xsmall {
+      width: 30%;
 
+      &.right {
+        margin-left: 55%;
+      }
+      &.left {
+        margin-left: 16%;
+      }
+      &.center {
+        margin-left: 35%;
+      }
+    }
     &.small{
       width: 40%;
 
@@ -27,32 +39,46 @@
       }
     }
     &.medium{
-      width: 55%;
+      width: 50%;
 
       &.right{
         margin-left: 40%;
       }
       &.left{
-        margin-left: 12%;
+        margin-left: 10%;
       }
       &.center{
-        margin-left: 23%;
+        margin-left: 25%;
       }
     }
     &.large{
-       width: 80%;
+       width: 70%;
 
       &.right{
-        margin-left: 15%;
+        margin-left: 22%;
       }
       &.left{
-        margin-left: 2%;
+        margin-left: 4%;
       }
       &.center{
-        margin-left: 9%;
+        margin-left: 15%;
       }
     }
-    img {
+    &.xlarge{
+      width: 80%;
+
+      &.right{
+        margin-left: 16%;
+      }
+      &.left{
+        margin-left: 6%;
+      }
+      &.center{
+        margin-left: 10%;
+      }
+    }
+
+      img {
       width: 100%;
     }
   }
@@ -84,25 +110,28 @@
       }
 */
       &:nth-of-type(odd){
-        top: 53.9%;
+        top: 54%;
         left: 28%;
       }
 
       &:nth-of-type(even){
-        top: 7.8%;
+        top: 7.95%;
         left: 52%;
       }
-
-      &.large{
+      &.xlarge{
         width: 31.95%;
       }
-
-      &.medium{
-        width: 24%;
+      &.large{
+        width: 28%;
       }
-
+      &.medium{
+        width: 20%;
+      }
       &.small{
         width: 16%;
+      }
+      &.xsmall{
+        width: 12%;
       }
     }
 
