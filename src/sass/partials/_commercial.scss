@@ -1,0 +1,14 @@
+.main-container{
+  .projects.commercial{
+    display: none;
+
+    @include mQ(1024px){
+      display: block;
+      top: 15.35%;
+
+      li:last-child, li:first-child{
+       border-bottom: none;
+      }
+    }
+  }
+}
