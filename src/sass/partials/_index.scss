@@ -62,6 +62,8 @@ main.main-container{
 
   @include mQ(1024px){
 
+    overflow: hidden;
+
     .projects, .logo, .author, .contact, .vortex{
       position: absolute;
       margin: 0;

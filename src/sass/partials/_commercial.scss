@@ -1,4 +1,5 @@
 .main-container{
+
   .projects.commercial{
     display: none;
 
@@ -9,6 +10,58 @@
       li:last-child, li:first-child{
        border-bottom: none;
       }
+    }
+  }
+
+  .image {
+    margin-bottom: 3.5rem;
+    cursor: pointer;
+
+    &:first-of-type{
+      margin-top: 6rem;
+    }
+
+    &.small{
+      width: 40%;
+
+      &.right{
+        margin-left: 50%;
+      }
+      &.left{
+        margin-left: 10%;
+      }
+      &.center{
+        margin-left: 30%;
+      }
+    }
+    &.middle{
+      width: 55%;
+
+      &.right{
+        margin-left: 40%;
+      }
+      &.left{
+        margin-left: 12%;
+      }
+      &.center{
+        margin-left: 23%;
+      }
+    }
+    &.large{
+       width: 80%;
+
+      &.right{
+        margin-left: 15%;
+      }
+      &.left{
+        margin-left: 2%;
+      }
+      &.center{
+        margin-left: 9%;
+      }
+     }
+    img {
+      width: 100%;
     }
   }
 }
