@@ -1,0 +1,21 @@
+.main-container{
+
+// for mobile
+
+  .projects.personal{
+    display: none;
+  }
+
+// for larger screens
+
+  @include mQ(1024px){
+    .projects.personal{
+      display: block;
+      top: 15.35%;
+
+      li:nth-child(2), li:first-child{
+        border-bottom: none;
+      }
+    }
+  }
+}

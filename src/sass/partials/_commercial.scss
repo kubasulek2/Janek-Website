@@ -51,6 +51,19 @@
         margin-left: 25%;
       }
     }
+    &.medium-large{
+      width: 60%;
+
+      &.right{
+        margin-left: 33%;
+      }
+      &.left{
+        margin-left: 6%;
+      }
+      &.center{
+        margin-left: 20%;
+      }
+    }
     &.large{
        width: 70%;
 
@@ -124,6 +137,9 @@
       &.large{
         width: 28%;
       }
+      &.medium-large{
+        width: 24%;
+      }
       &.medium{
         width: 20%;
       }
@@ -153,11 +169,11 @@
     }
     .nav-right{
       .prev{
-        left: 83.95%;
+        left: 88%;
         top: 15.5%
       }
       .next{
-        left: 83.95%;
+        left: 88%;
         top: 38.55%;
       }
     }
