@@ -23,10 +23,10 @@ $(() => {
     if ( draw === prevNum ){
       drawTheme(themes);
     } else {
-      console.log(prevNum);
-      prevNum = draw;
-      themes.each(function (i, e) {
 
+      prevNum = draw;
+
+      themes.each(function (i, e) {
         i === draw ? $(e).css("display", "block") : $(e).css("display", "none");
       })
     }
