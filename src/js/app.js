@@ -13,12 +13,23 @@ $(() => {
     }
 
   });
+// drawing themes
+
+  const drawTheme = (themes)=> {
+    let draw = Math.floor(Math.random() * themes.length );
+    themes.each(function (i, e) {
+
+      i === draw ? $(e).css("display", "block") : $(e).css("display", "none");
+    })
+  };
 
 // handling left and right side galleries
-  const handleLeftGallery = (index, images)=>{
+  const handleLeftGallery = (index, images, themes)=>{
     let counter = index;
 
     $(".nav-left > .next").on("click", function () {
+
+      drawTheme(themes);
 
       if (counter === index ){
         $(this).prev().show()
@@ -38,7 +49,7 @@ $(() => {
 
     $(".nav-left > .prev").on("click", function () {
 
-      console.log(counter);
+      drawTheme(themes);
 
       if( !(images.length % 2) && counter === images.length -2 ){
         $(this).next().show();
@@ -58,10 +69,12 @@ $(() => {
     })
   };
 
-  const handleRightGallery = (index, images)=>{
+  const handleRightGallery = (index, images, themes)=>{
     let counter = index;
 
     $(".nav-right > .next").on("click", function () {
+
+      drawTheme(themes);
 
       if (counter === index ){
         $(this).prev().show()
@@ -81,6 +94,7 @@ $(() => {
 
     $(".nav-right > .prev").on("click", function () {
 
+      drawTheme(themes);
 
       if( !(images.length % 2) && counter === images.length -1 ){
         $(this).next().show();
@@ -102,14 +116,16 @@ $(() => {
 
   const showImagesCommercial = () => {
     const images = $('.image');
+    const themes = $('.theme img');
 
     let leftIndex = 0;
     let rightIndex = 1;
 
     $(images[0]).show();
     $(images[1]).show();
-   handleLeftGallery(leftIndex, images);
-   handleRightGallery(rightIndex, images);
+    drawTheme(themes);
+    handleLeftGallery(leftIndex, images, themes);
+    handleRightGallery(rightIndex, images, themes);
 
 
  };

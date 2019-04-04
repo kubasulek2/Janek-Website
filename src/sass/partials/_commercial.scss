@@ -94,6 +94,9 @@
       img {
       width: 100%;
     }
+    .theme{
+      display: none;
+    }
   }
   .nav-left div, .nav-right div{
     display: none;
@@ -185,6 +188,18 @@
       .next{
         top: 69.2%;
         left: 20.1%;
+      }
+    }
+
+    .theme{
+      position: absolute;
+      display: block;
+      width: 12%;
+      top: 61.5%;
+      left: 72%;
+      img{
+        width: 100%;
+        display: none;
       }
     }
   }
