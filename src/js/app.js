@@ -14,13 +14,22 @@ $(() => {
 
   });
 // drawing themes
+  let prevNum = -1;
 
   const drawTheme = (themes)=> {
-    let draw = Math.floor(Math.random() * themes.length );
-    themes.each(function (i, e) {
 
-      i === draw ? $(e).css("display", "block") : $(e).css("display", "none");
-    })
+    let draw = Math.floor(Math.random() * themes.length );
+
+    if ( draw === prevNum ){
+      drawTheme(themes);
+    } else {
+      console.log(prevNum);
+      prevNum = draw;
+      themes.each(function (i, e) {
+
+        i === draw ? $(e).css("display", "block") : $(e).css("display", "none");
+      })
+    }
   };
 
 // handling left and right side galleries
