@@ -1,2 +1,2 @@
-$(()=>{window.innerWidth>=1024&&(()=>{let e=$(".gallery img");$(e[0]).parent().show()})()});
+$(()=>{let t=-1,n=-1;const o=()=>{const s=[16,24,32,40,48,56,64,72],l=[7.9,15.6,23.3];let e=[],h=Math.floor(Math.random()*s.length),r=Math.floor(Math.random()*l.length);return r===n||h===t?o():(t=h,n=r,e.push(s[h]),e.push(l[r]),e)};let s=0,l=$(".gallery img");const e=()=>{let t=$(l[s]).parent(),n=o();t.show(),t.css("left",`${n[0]}%`),t.css("top",`${n[1]}%`),s<=l.length-1&&(t.one("click",function(){$(this).first().css("cursor","initial"),e()}),s++)};window.innerWidth>=1024&&e()});
 //# sourceMappingURL=gallery.js.map

@@ -18,6 +18,9 @@
 // larger screens
 @include mQ(1024px){
  .gallery{
+   cursor: pointer;
    display: none;
+   position: absolute;
+   width: 24%;
  }
 }
