@@ -1,4 +1,27 @@
 // mobile
+.return{
+  display: none;
+}
+.return-mobile{
+  margin-top: 1.7vw;
+  width: 6vw;
+  height: 6vw;
+  position: fixed;
+  top: 2rem;
+  left: 2%;
+  background: url("../../images/composition/arrow.png") center center/contain no-repeat rgba(255,255,255,0.3);
+  span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+}
+.gallery:first-of-type{
+  margin-top: 4rem;
+}
 .gallery {
   width: 100%;
   margin-bottom: 1rem;
@@ -17,10 +40,27 @@
 
 // larger screens
 @include mQ(1024px){
- .gallery{
-   cursor: pointer;
-   display: none;
-   position: absolute;
-   width: 24%;
- }
+  .gallery{
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    width: 24%;
+
+    &:first-of-type{
+     margin-top: initial;
+    }
+  }
+  .return-mobile{
+    display: none;
+  }
+  .return{
+    display: block;
+    position: absolute;
+    width: 4%;
+    top: 23.6%;
+    left: 8%;
+    img{
+      width: 100%;
+    }
+  }
 }
