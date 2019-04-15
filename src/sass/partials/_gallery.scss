@@ -1,0 +1,23 @@
+// mobile
+.gallery {
+  width: 100%;
+  margin-bottom: 1rem;
+
+  img{
+    width: 100%;
+  }
+}
+
+@include mQ(600px){
+  .gallery{
+    width: 80%;
+    margin: auto;
+  }
+}
+
+// larger screens
+@include mQ(1024px){
+ .gallery{
+   display: none;
+ }
+}

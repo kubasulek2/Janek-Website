@@ -140,9 +140,5 @@ $(() => {
  };
  showImagesCommercial();
 
-
-
-//commercial left gallery
-
 });
 
