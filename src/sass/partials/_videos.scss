@@ -6,10 +6,11 @@
   height: 100vh;
   background: rgba(255,255,255,.9);
   .vid-container{
-    width: 100%;
+    width: 95%;
     padding-top: 56.25%;
     position: absolute;
     top: 50%;
+    left: 2.5%;
     transform: translateY(-50%);
     z-index: 2;
     iframe{
@@ -21,4 +22,24 @@
       z-index: 3;
     }
   }
+  @include mQ(1024px){
+    background: initial;
+
+    .vid-container{
+      transform: translateY(0);
+      width: 32vw;
+      height: 18vw;
+      padding-top: initial;
+      &.odd{
+        top: 30%;
+        left: 10%;
+      }
+      &.even{
+        top: 15%;
+        left: 55%;
+      }
+    }
+
+  }
+
 }
