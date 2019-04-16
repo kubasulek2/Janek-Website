@@ -42,25 +42,11 @@
 @include mQ(1024px){
   .gallery{
     cursor: pointer;
-    display: none;
     position: absolute;
     width: 24%;
 
     &:first-of-type{
      margin-top: initial;
-    }
-  }
-  .return-mobile{
-    display: none;
-  }
-  .return{
-    display: block;
-    position: absolute;
-    width: 4%;
-    top: 23.6%;
-    left: 8%;
-    img{
-      width: 100%;
     }
   }
 }

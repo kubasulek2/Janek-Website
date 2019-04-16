@@ -1,4 +1,31 @@
 $(()=>{
+  // create array of kampania smieciowa gallery sources
+  const galleryKampania = $('.photos');
+  const galleryKampaniaPics = [
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0090-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0119-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0244-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0324-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0336-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0350-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0370-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0394-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0418-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0430-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0439-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0452-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0578-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0608-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0636-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0645-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0672-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0713-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0798-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0834-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0881-sRGB.jpg",
+    "../images/kampania%20smieciowa/Segregacja-uMstWarszawa0915-sRGB.jpg"
+  ];
+
   // gallery page handling
   let prevWidth = -1;
   let prevHeight = -1;
@@ -26,19 +53,25 @@ $(()=>{
 
   };
   let counter = 0;
-  let images = $(".gallery img");
 
-  const showGalleryImages = () =>{
-    let image = $(images[counter]).parent();
+
+  const showGalleryImages = (images) =>{
+    let frame = $('<figure class="gallery">');
+    let image = $('<img>');
+    image.attr('src', images[counter]);
+    frame.append(image);
+    $('.main-container').append(frame);
+    //let image = $(images[counter]).parent();
     let position = drawImagePosition();
     let filterVal = 'blur(3px)';
 
 
-    image.show();
-    image.css("left", `${position[0]}%`);
-    image.css("top", `${position[1]}%`);
+    frame.css("left", `${position[0]}%`);
+    frame.css("top", `${position[1]}%`);
 
     if (counter >= 1 && counter <= images.length -1) {
+      let images = $('.gallery');
+      console.log(images);
       $(images[counter-1])
         .css('filter',filterVal)
         .css('webkitFilter',filterVal)
@@ -48,15 +81,20 @@ $(()=>{
     }
     if (counter <= images.length -1) {
       image.one("click", function () {
+        console.log(this);
         $(this).first().css("cursor", "initial");
-        showGalleryImages()
+        showGalleryImages(galleryKampaniaPics)
       });
       counter++;
     }
   };
 
   if (window.innerWidth >= 1024){
-    showGalleryImages()
+    galleryKampania.on('click', function () {
+      showGalleryImages(galleryKampaniaPics)
+    })
   }
+
+
 
 });
