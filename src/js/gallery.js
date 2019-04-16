@@ -31,12 +31,20 @@ $(()=>{
   const showGalleryImages = () =>{
     let image = $(images[counter]).parent();
     let position = drawImagePosition();
+    let filterVal = 'blur(3px)';
 
 
     image.show();
     image.css("left", `${position[0]}%`);
     image.css("top", `${position[1]}%`);
-
+    if (counter >= 1) {
+      $(images[counter-1])
+        .css('filter',filterVal)
+        .css('webkitFilter',filterVal)
+        .css('mozFilter',filterVal)
+        .css('oFilter',filterVal)
+        .css('msFilter',filterVal);
+    }
     if (counter <= images.length -1) {
       image.one("click", function () {
         $(this).first().css("cursor", "initial");
