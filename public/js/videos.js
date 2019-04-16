@@ -1,0 +1,2 @@
+$(()=>{const n=$(".main-container"),a=$(".video"),e=$("body");a.on("click",function(a){a.stopPropagation();const o=$('<div class="vid-background"></div>'),i=$('<div class="vid-container"></div>'),c=$("<iframe></iframe>",{frameborder:"0",webkitallowfullscreen:"",mozallowfullscreen:"",allowfullscreen:""}).attr("src",$(this).data("src"));i.append(c),o.append(i),n.append(o),e.one("click",function(){o.remove()})})});
+//# sourceMappingURL=videos.js.map

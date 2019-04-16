@@ -32,7 +32,8 @@ gulp.task( 'scripts', function () {
 		.src( [
 			'./src/js/!(vendor)**/!(app)*.js',
 			'./src/js/app.js',
-			'./src/js/gallery.js'
+			'./src/js/gallery.js',
+			'./src/js/videos.js'
 		] )
 		.pipe(sourcemaps.init())
 		.pipe( $.plumber() )
