@@ -61,7 +61,10 @@ $(()=>{
     image.attr('src', images[counter]);
     frame.append(image);
     $('.main-container').append(frame);
-    //let image = $(images[counter]).parent();
+
+    frame.on('click', function (e) {
+      e.stopPropagation();
+    });
     let position = drawImagePosition();
     let filterVal = 'blur(3px)';
 
@@ -90,7 +93,14 @@ $(()=>{
   };
 
   if (window.innerWidth >= 1024){
-    galleryKampania.on('click', function () {
+    galleryKampania.on('click', function (e) {
+      e.stopPropagation();
+      counter = 0;
+      $('body').one('click', function () {
+        let pictures = $('.gallery');
+        pictures.off();
+        pictures.remove();
+      });
       showGalleryImages(galleryKampaniaPics)
     })
   }
