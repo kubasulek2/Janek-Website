@@ -24,6 +24,9 @@
   }
   @include mQ(1024px){
     background: initial;
+    position: initial;
+    width: initial;
+    height: initial;
 
     .vid-container{
       transform: translateY(0);

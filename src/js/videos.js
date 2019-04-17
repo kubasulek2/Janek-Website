@@ -9,7 +9,7 @@ $(()=>{
 
     const vidBackground = $('<div class="vid-background"></div>');
     const vidContainer = $('<div class="vid-container"></div>');
-    const iframe = $('<iframe></iframe>',{ frameborder:"0", webkitallowfullscreen:'', mozallowfullscreen:'', allowfullscreen:''})
+    const iframe = $('<iframe></iframe>',{ frameborder:"0", allowfullscreen:'', webkitallowfullscreen:'', mozallowfullscreen:''})
       .attr('src', $(this).data("src"));
 
     vidContainer.append(iframe);

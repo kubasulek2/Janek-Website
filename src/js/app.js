@@ -6,10 +6,11 @@ $(() => {
 
     if(mq.matches) {
       // viewport <= 1023px
-      window.location.reload()
+      window.setTimeout(console.log("aaaa"), 1000);
+      window.location.reload(true)
     } else {
       // viewport > 1023px
-      window.location.reload();
+      window.location.reload(true);
     }
 
   });

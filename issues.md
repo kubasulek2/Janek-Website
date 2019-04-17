@@ -5,7 +5,8 @@ safari - nie dziala przeladowanie, nie dzialaja marginy, nie dziala position abs
 
 jak sie nazywaja zdjecia "zrzut ekranu" i "do personala obrazek"
 
+przyciac videa,
 
-zrzut ekranu ma wysokosc 6
+zabezpieczyc portrait mode dla duzych szerokości
 
-czy zrobic losowanie bez mozliwosci wylosowania poprzedniego?
+kod ktory przeladowuje galerie
