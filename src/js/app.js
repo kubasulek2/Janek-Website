@@ -1,12 +1,11 @@
 $(() => {
 // refresh on resize
-  const mobileViewport = window.matchMedia("screen and (max-width: 1023px)");
+  const mobileViewport = window.matchMedia("screen and (max-width: 1024px)");
 
   mobileViewport.addListener(function(mq) {
 
     if(mq.matches) {
       // viewport <= 1023px
-      window.setTimeout(console.log("aaaa"), 1000);
       window.location.reload(true)
     } else {
       // viewport > 1023px

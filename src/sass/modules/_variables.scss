@@ -1,11 +1,12 @@
-
 @mixin mQ($width) {
-  @media (min-width: $width) {
+  @media (min-width: $width){
     @content
   }
 }
-@mixin grid-height($width){
-  height: calc(#{$width} * .505);
+@mixin mQLanscape($width) {
+  @media (min-width: $width) and (orientation: landscape){
+    @content
+  }
 }
 
 @font-face {

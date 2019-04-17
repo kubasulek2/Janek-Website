@@ -60,7 +60,7 @@ main.main-container{
 
   // for wider screens
 
-  @include mQ(1024px){
+  @include mQLanscape(1024px){
 
     overflow: hidden;
 
@@ -76,7 +76,7 @@ main.main-container{
       li{
         display: inline-block;
         border-bottom: .1rem solid black;
-        margin-bottom: .8vh;
+        margin-bottom: .6vh;
       }
     }
 
@@ -129,7 +129,7 @@ main.main-container{
       padding: 1em 1.2em 0 1.2em;
     }
   }
-  @include mQ(1200px) {
+  @include mQLanscape(1200px) {
     .author{
       font-size: .8rem;
     }
@@ -137,7 +137,7 @@ main.main-container{
       font-size: 1.35rem;
     }
   }
-  @include mQ(1300px) {
+  @include mQLanscape(1300px) {
     .author{
       font-size: .9rem;
     }

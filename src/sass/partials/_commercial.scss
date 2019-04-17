@@ -113,7 +113,7 @@
 
 //for larger screens
 
-  @include mQ(1024px){
+  @include mQLanscape(1024px){
     .projects.commercial{
       display: block;
       top: 15.35%;
@@ -130,13 +130,6 @@
       margin: 0!important;
       position: absolute;
 
-     /* &[data-image="2"]{
-        display: block;
-      }
-      &[data-image="3"]{
-        display: block;
-      }
-*/
       &:nth-of-type(odd){
         top: 54%;
         left: 28%;

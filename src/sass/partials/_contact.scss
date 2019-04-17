@@ -30,7 +30,7 @@
 
   // for larger screens
 
-  @include mQ(1024px){
+  @include mQLanscape(1024px){
     .contact-details, .blob-large{
       position: absolute;
       margin: 0;
