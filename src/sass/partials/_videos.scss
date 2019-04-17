@@ -7,12 +7,15 @@
   background: rgba(255,255,255,.9);
   .vid-container{
     width: 95%;
-    padding-top: 56.25%;
     position: absolute;
     top: 50%;
     left: 2.5%;
     transform: translateY(-50%);
     z-index: 2;
+    &.small{
+      width: 50%;
+      left: 25%;
+    }
     iframe{
       position: absolute;
       top: 0;
@@ -31,8 +34,6 @@
     .vid-container{
       transform: translateY(0);
       width: 32vw;
-      height: 18vw;
-      padding-top: initial;
       &.odd{
         top: 30%;
         left: 10%;
