@@ -31,8 +31,8 @@ $(()=>{
   let prevHeight = -1;
 
   const drawImagePosition = () =>{
-    const widths = [16.5,21,24.6,27.3,30.2,33.8,37,39.4];
-    const heights = [6.5, 8.2, 11, 13.4, 15.6, 17, 19.3, 21.8, 23.3];
+    const widths = [52,50.1,48.2,46.6,53.7,56,57.2,59];
+    const heights = [6.5, 7.7, 8.3, 9.2, 10, 10.9, 11.6, 12.1, 13];
 
     let position =[];
     let currWidth = Math.floor(Math.random()*widths.length);
@@ -56,7 +56,8 @@ $(()=>{
 
 
   const showGalleryImages = (images) =>{
-    let frame = $('<figure class="gallery">');
+    let position;
+    let frame = $('<figure class="picture">');
     let image = $('<img>');
     image.attr('src', images[counter]);
     frame.append(image);
@@ -65,21 +66,21 @@ $(()=>{
     frame.on('click', function (e) {
       e.stopPropagation();
     });
-    let position = drawImagePosition();
+
+    counter === 0 ? position = [52, 7.95] : position = drawImagePosition();
 
 
     frame.css("left", `${position[0]}%`);
     frame.css("top", `${position[1]}%`);
 
     if (counter >= 1 && counter <= images.length -1) {
-      let images = $('.gallery');
-      console.log(images);
+      let images = $('.picture');
       $(images[counter-1])
         .css('opacity','.9')
         }
     if (counter <= images.length -1) {
       image.one("click", function () {
-        console.log(this);
+
         $(this).first().css("cursor", "initial");
         showGalleryImages(galleryKampaniaPics)
       });
@@ -87,19 +88,15 @@ $(()=>{
     }
   };
 
-  if (window.innerWidth >= 1024){
-    galleryKampania.on('click', function (e) {
-      e.stopPropagation();
-      counter = 0;
-      $('body').one('click', function () {
-        let pictures = $('.gallery');
-        pictures.off();
-        pictures.remove();
-      });
-      showGalleryImages(galleryKampaniaPics)
-    })
-  }
 
-
-
+  galleryKampania.on('click', function (e) {
+    e.stopPropagation();
+    counter = 0;
+    $('body').one('click', function () {
+      let pictures = $('.picture');
+      pictures.off();
+      pictures.remove();
+    });
+    showGalleryImages(galleryKampaniaPics)
+  })
 });

@@ -80,3 +80,24 @@
     }
   }
 }
+
+@include mQ(1200px){
+  main{
+    .author{
+      width: 40%;
+      z-index: 2;
+    }
+    .gallery{
+      width: 40%;
+    }
+  }
+}
+
+.picture{
+  width: 24%;
+  position: absolute;
+  img{
+    width: 100%;
+    cursor: pointer;
+  }
+}
