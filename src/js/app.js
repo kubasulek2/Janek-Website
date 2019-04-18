@@ -17,14 +17,22 @@ $(() => {
 
     let draw = Math.floor(Math.random() * themes.length );
 
-    if ( draw === prevNum ){
+    if ( draw === prevNum || draw === 1 ){
       drawTheme(themes);
     } else {
       if (!(clickCount % 4) || clickCount === 0) {
-        prevNum = draw;
-        themes.each(function (i, e) {
-          i === draw ? $(e).css("display", "block") : $(e).css("display", "none");
-        })
+        if (prevNum === 0){
+          prevNum = 1;
+          themes.each(function (i, e) {
+            i === 1 ? $(e).css("display", "block") : $(e).css("display", "none");
+          })
+
+        } else{
+          prevNum = draw;
+          themes.each(function (i, e) {
+            i === draw ? $(e).css("display", "block") : $(e).css("display", "none");
+          })
+        }
       }
       clickCount++;
     }

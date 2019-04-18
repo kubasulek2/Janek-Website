@@ -206,6 +206,9 @@
         width: 100%;
         display: none;
         user-select: none;
+        &.vertical{
+          width: 70%;
+        }
       }
     }
   }
