@@ -1,18 +1,6 @@
 $(() => {
 // refresh on resize
-  const mobileViewport = window.matchMedia("screen and (max-width: 1024px)");
 
-  mobileViewport.addListener(function(mq) {
-
-    if(mq.matches) {
-      // viewport <= 1023px
-      window.location.reload(true)
-    } else {
-      // viewport > 1023px
-      window.location.reload(true);
-    }
-
-  });
 // drawing themes
   let prevNum = -1;
 
