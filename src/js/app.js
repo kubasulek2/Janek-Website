@@ -1,5 +1,13 @@
 $(() => {
-// refresh on resize
+  // define image index object to properly show images after resizing
+  const imagesInfo = {
+    leftIndex: 0,
+    rightIndex: 1
+  };
+
+// define smaller screens
+  let mobileViewport = window.matchMedia("screen and (max-width: 1023px) and (orientation: landscape)");
+  let tabletViewport = window.matchMedia("screen and (max-width: 1199px)");
 
 // drawing themes
   let prevNum = -1;
@@ -36,6 +44,7 @@ $(() => {
 
       $(images[counter]).hide();
       counter += 2;
+      imagesInfo.leftIndex = counter;
       $(images[counter]).show();
 
       if( !(images.length % 2) && counter === images.length -2 ){
@@ -59,6 +68,7 @@ $(() => {
 
       $(images[counter]).hide();
       counter -= 2;
+      imagesInfo.leftIndex = counter;
       $(images[counter]).show();
 
       if (counter === index ){
@@ -81,6 +91,7 @@ $(() => {
 
       $(images[counter]).hide();
       counter += 2;
+      imagesInfo.rightIndex = counter;
       $(images[counter]).show();
 
       if( !(images.length % 2) && counter === images.length -1 ){
@@ -104,6 +115,7 @@ $(() => {
 
       $(images[counter]).hide();
       counter -= 2;
+      imagesInfo.rightIndex = counter;
       $(images[counter]).show();
 
       if (counter === index ){
@@ -119,13 +131,44 @@ $(() => {
 
     let leftIndex = 0;
     let rightIndex = 1;
-
-    $(images[0]).show();
-    $(images[1]).show();
     drawTheme(themes);
     handleLeftGallery(leftIndex, images, themes);
     handleRightGallery(rightIndex, images, themes);
 
+
+
+    // handle display while resize and change screen orientation
+
+
+    if(!(mobileViewport.matches || tabletViewport.matches)) {
+      $(images[0]).show();
+      $(images[1]).show();
+    }
+
+    mobileViewport.addListener(function(mq) {
+
+      if(mq.matches) {
+        $(images).show()
+      } else {
+        $(images).hide();
+        $(images[imagesInfo.leftIndex]).show();
+        $(images[imagesInfo.rightIndex]).show();
+
+      }
+
+    });
+
+    tabletViewport.addListener(function(mq) {
+
+      if(mq.matches) {
+        $(images).show()
+      } else {
+        $(images).hide();
+        $(images[imagesInfo.leftIndex]).show();
+        $(images[imagesInfo.rightIndex]).show();
+
+      }
+    });
 
  };
  showImagesCommercial();
