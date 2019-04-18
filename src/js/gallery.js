@@ -1,6 +1,12 @@
 $(()=>{
   const mobileViewport = window.matchMedia("screen and (max-width: 1024px)");
+  mobileViewport.addListener(function(mq) {
 
+    if(mq.matches) {
+      //console.log($('.picture'), images);
+      $('.picture').remove()
+    }
+  });
 
   // create array of kampania smieciowa gallery sources
   const galleryKampania = $('.photos');
@@ -88,13 +94,6 @@ $(()=>{
         showGalleryImages(galleryKampaniaPics)
       });
       counter++;
-      mobileViewport.addListener(function(mq) {
-
-        if(mq.matches) {
-          //console.log($('.picture'), images);
-          $('.picture').remove()
-        }
-      })
     }
   };
 

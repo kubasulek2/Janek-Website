@@ -3,6 +3,7 @@ $(() => {
 
 // drawing themes
   let prevNum = -1;
+  let clickCount = 0;
 
   const drawTheme = (themes)=> {
 
@@ -11,12 +12,13 @@ $(() => {
     if ( draw === prevNum ){
       drawTheme(themes);
     } else {
-
-      prevNum = draw;
-
-      themes.each(function (i, e) {
-        i === draw ? $(e).css("display", "block") : $(e).css("display", "none");
-      })
+      if (!(clickCount % 4) || clickCount === 0) {
+        prevNum = draw;
+        themes.each(function (i, e) {
+          i === draw ? $(e).css("display", "block") : $(e).css("display", "none");
+        })
+      }
+      clickCount++;
     }
   };
 

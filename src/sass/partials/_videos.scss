@@ -33,14 +33,21 @@
 
     .vid-container{
       transform: translateY(0);
-      width: 32vw;
+      width: 45%;
+      &.small{
+        width: 20%;
+      }
       &.odd{
         top: 30%;
         left: 10%;
+        &.small{
+          top: 15%;
+        }
       }
       &.even{
-        top: 15%;
-        left: 55%;
+        top: 5%;
+        left: 54%;
+
       }
     }
 
