@@ -3,7 +3,7 @@ main.main-container{
   //margin-top: 1rem;
   position: relative;
 
-  @include mQ(1024px) {
+  @include mQLanscape(1024px) {
     width: 1024px;
     @include grid-height(1024px);
     background: url("../../images/composition/siatka_13.png") 0 0/contain no-repeat;
@@ -11,6 +11,7 @@ main.main-container{
   @include mQ(1200px) {
     width: 1200px;
     @include grid-height(1200px);
+    background: url("../../images/composition/siatka_13.png") 0 0/contain no-repeat
   }
   @include mQ(1300px) {
     width: 1300px;
