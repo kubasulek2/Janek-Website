@@ -28,5 +28,18 @@ $(()=>{
     $body.one('click', function () {
       vidBackground.remove();
     })
-  })
+  });
+
+  // $( window ).on("resize", function () {
+  //   let cellWidth = $(".cell").outerWidth() - 1;
+  //   let height = $(".container").outerHeight();
+  //   console.log(height, cellWidth);
+  //   switch (true) {
+  //     case (height > (cellWidth * 13) ):
+  //       console.log('aaa');
+  //       $('.container').css("height", ((cellWidth * 13)+1));
+  //       break;
+  //
+  //   }
+  //   })
 });

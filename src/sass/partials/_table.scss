@@ -1,0 +1,45 @@
+
+body{
+  position: relative;
+}
+.container{
+  position: absolute;
+  width: 95vw;
+  height: 95vh;
+  margin: auto;
+  top: 2.5vh;
+  left: 2.5vw;
+  overflow: hidden;
+
+}
+
+.content{
+  display: none;
+  @include mQ(1024px){
+    display: table;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+
+    .row{
+      display: table-row;
+      height: 3.8vw;
+      &:first-child, &:nth-child(2){
+        .cell{
+          &:first-child, &:nth-child(2), &:nth-child(3){
+            visibility: hidden;
+          }
+        }
+
+      }
+
+      .cell{
+        display: table-cell;
+        border: 1px solid black;
+        width: 4%;
+      }
+    }
+
+  }
+}
