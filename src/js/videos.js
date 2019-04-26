@@ -30,16 +30,19 @@ $(()=>{
     })
   });
 
-  // $( window ).on("resize", function () {
-  //   let cellWidth = $(".cell").outerWidth() - 1;
-  //   let height = $(".container").outerHeight();
-  //   console.log(height, cellWidth);
-  //   switch (true) {
-  //     case (height > (cellWidth * 13) ):
-  //       console.log('aaa');
-  //       $('.container').css("height", ((cellWidth * 13)+1));
-  //       break;
-  //
-  //   }
-  //   })
+  const calculateTableRowsAmount = () => {
+
+    let viewPort = $(window).height();
+    let row = $('.row');
+    let rowHeight = row.outerHeight();
+    let availableRows =  Math.floor(viewPort/rowHeight);
+
+
+    row.each(function (index) {
+        index <= availableRows -1 ? $(this).removeClass('hidden'): $(this).addClass("hidden");
+    })
+  };
+  calculateTableRowsAmount();
+  $( window ).on("resize", calculateTableRowsAmount);
+
 });
