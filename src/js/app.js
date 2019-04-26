@@ -5,21 +5,37 @@ $(() => {
     rightIndex: 1
   };
 
-// define smaller screens
+  // define smaller screens
+
   let mobileViewport = window.matchMedia("screen and (max-width: 1023px) and (orientation: landscape)");
   let tabletViewport = window.matchMedia("screen and (max-width: 1199px)");
-// drawing a table relative to viewport
-  const calculateTableRowsAmount = () => {
 
+  // drawing a table relative to viewport
+
+  const defineTable = () => {
+    let table = $('.table');
     let viewPort = $(window).height();
     let row = $('.row');
     let rowHeight = row.outerHeight();
     let availableRows =  Math.floor(viewPort/rowHeight);
 
+    if (availableRows > 12){
+      table.removeClass()
+        .addClass('table')
+        .addClass(`rows${availableRows.toString()}`);
 
-    row.each(function (index) {
-      index <= availableRows -1 ? $(this).removeClass('hidden'): $(this).addClass("hidden");
-    })
+      row.each(function (index) {
+        index <= availableRows -2 ? $(this).removeClass('hidden'): $(this).addClass("hidden");
+      })
+    } else{
+      table.removeClass()
+        .addClass('table')
+        .addClass(`rows12`);
+
+      row.each(function (index) {
+        index <= 11 ? $(this).removeClass('hidden'): $(this).addClass("hidden");
+      })
+    }
   };
 // drawing themes
   let prevNum = -1;
@@ -192,8 +208,8 @@ $(() => {
 
  };
  showImagesCommercial();
- calculateTableRowsAmount();
- $( window ).on("resize",calculateTableRowsAmount);
+ defineTable();
+ $( window ).on("resize",defineTable);
 
 });
 

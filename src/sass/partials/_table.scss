@@ -1,43 +1,61 @@
-
-
-
 .container{
   max-width: 2400px;
-  width: 94vw;
+  width: 100%;
   position: relative;
 
-}
+  @include mQLanscape(1024px) {
+    width: 95vw;
+  }
+  @include mQ(1200px) {
+    width: 95vw;
+  }
 
-.table{
-  display: none;
-  @include mQ(1024px){
-    display: table;
+  .content-wrapper{
+    width: calc(100% - 1px);
+    position: absolute;
+    background: red;
+    &.rows12{
+      height: 100%;
+    }
+    &.rows13{
+      height: 92.3%;
+    }
+  }
+
+  .table{
+    position: relative;
+    display: none;
     table-layout: fixed;
     border-collapse: collapse;
+    border-spacing: 0;
     width: 100%;
 
-
+    @include mQLanscape(1024px){
+      display: table;
+    }
+    @include mQ(1200px) {
+      display: table;
+    }
     .row{
       display: table-row;
-      height: 3.76vw;
+      height: 3.8vw;
       &.hidden{
         display: none;
       }
-      &:first-child, &:nth-child(2){
-        .cell{
-          &:first-child, &:nth-child(2), &:nth-child(3){
-            visibility: hidden;
-          }
-        }
-
-      }
-
       .cell{
         display: table-cell;
         border: 1px solid black;
         width: 4%;
       }
+      &:nth-child(1), &:nth-child(2) {
+        .cell {
+          &:first-child, &:nth-child(2), &:nth-child(3) {
+            visibility: hidden;
+          }
+        }
+      }
     }
 
   }
+
 }
