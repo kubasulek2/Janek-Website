@@ -20,16 +20,16 @@ $(() => {
     let availableRows =  Math.floor(viewPort/rowHeight);
 
     if (availableRows > 12){
-      table.removeClass()
-        .addClass('table')
-        .addClass(`rows${availableRows.toString()}`);
+      table.prev().removeClass()
+        .addClass('content-wrapper')
+        .addClass(`rows${(availableRows-1).toString()}`);
 
       row.each(function (index) {
         index <= availableRows -2 ? $(this).removeClass('hidden'): $(this).addClass("hidden");
       })
     } else{
-      table.removeClass()
-        .addClass('table')
+      table.prev().removeClass()
+        .addClass('content-wrapper')
         .addClass(`rows12`);
 
       row.each(function (index) {

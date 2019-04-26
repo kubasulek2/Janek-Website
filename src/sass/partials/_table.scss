@@ -16,9 +16,39 @@
     background: red;
     &.rows12{
       height: 100%;
+      top: 0;
     }
     &.rows13{
-      height: 92.3%;
+      height: 92.2%;
+      top: 7.8%;
+    }
+    &.rows14{
+      height: 85.71%;
+      top: 7.14%;
+    }
+    &.rows15{
+      height: 80%;
+      top: 6.67%;
+    }
+    &.rows16{
+      height: 75%;
+      top: 12.5%;
+    }
+    &.rows17{
+      height: 70.59%;
+      top: 11.76%;
+    }
+    &.rows18{
+      height: 77.78%;
+      top: 11.11%;
+    }
+    &.rows19{
+      height: 73.68%;
+      top: 15.79%;
+    }
+    &.rows20{
+      height: 70%;
+      top: 15%;
     }
   }
 
