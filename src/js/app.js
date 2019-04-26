@@ -19,6 +19,11 @@ $(() => {
     let rowHeight = row.outerHeight();
     let availableRows =  Math.floor(viewPort/rowHeight);
 
+    // to avoid content-wrapper class going over "rows20"
+    availableRows = availableRows > 21 ? 21 : availableRows;
+
+    // draw table rows (min 12, max 20)
+    // add class to content-wrapper informing how many rows is there
     if (availableRows > 12){
       table.prev().removeClass()
         .addClass('content-wrapper')
@@ -37,6 +42,7 @@ $(() => {
       })
     }
   };
+
 // drawing themes
   let prevNum = -1;
   let clickCount = 0;
@@ -48,7 +54,7 @@ $(() => {
     if ( draw === prevNum || draw === 1 ){
       drawTheme(themes);
     } else {
-      if (!(clickCount % 4) || clickCount === 0) {
+      if (!(clickCount % 3) || clickCount === 0) {
         if (prevNum === 0){
           prevNum = 1;
           themes.each(function (i, e) {
