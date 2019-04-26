@@ -2,12 +2,13 @@
 
 
 .container{
+  max-width: 2400px;
   width: 94vw;
-  overflow: hidden;
+  position: relative;
 
 }
 
-.content{
+.table{
   display: none;
   @include mQ(1024px){
     display: table;

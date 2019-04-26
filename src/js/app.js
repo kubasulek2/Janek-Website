@@ -8,7 +8,19 @@ $(() => {
 // define smaller screens
   let mobileViewport = window.matchMedia("screen and (max-width: 1023px) and (orientation: landscape)");
   let tabletViewport = window.matchMedia("screen and (max-width: 1199px)");
+// drawing a table relative to viewport
+  const calculateTableRowsAmount = () => {
 
+    let viewPort = $(window).height();
+    let row = $('.row');
+    let rowHeight = row.outerHeight();
+    let availableRows =  Math.floor(viewPort/rowHeight);
+
+
+    row.each(function (index) {
+      index <= availableRows -1 ? $(this).removeClass('hidden'): $(this).addClass("hidden");
+    })
+  };
 // drawing themes
   let prevNum = -1;
   let clickCount = 0;
@@ -180,6 +192,8 @@ $(() => {
 
  };
  showImagesCommercial();
+ calculateTableRowsAmount();
+ $( window ).on("resize",calculateTableRowsAmount);
 
 });
 

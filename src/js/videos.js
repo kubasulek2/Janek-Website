@@ -30,19 +30,6 @@ $(()=>{
     })
   });
 
-  const calculateTableRowsAmount = () => {
 
-    let viewPort = $(window).height();
-    let row = $('.row');
-    let rowHeight = row.outerHeight();
-    let availableRows =  Math.floor(viewPort/rowHeight);
-
-
-    row.each(function (index) {
-        index <= availableRows -1 ? $(this).removeClass('hidden'): $(this).addClass("hidden");
-    })
-  };
-  calculateTableRowsAmount();
-  $( window ).on("resize", calculateTableRowsAmount);
 
 });
