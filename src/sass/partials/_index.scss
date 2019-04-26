@@ -62,16 +62,17 @@ main.main-container{
 
   @include mQLanscape(1024px){
 
-    overflow: hidden;
+
 
     .projects, .logo, .author, .contact, .vortex{
       position: absolute;
       margin: 0;
+      z-index: 2;
     }
 
     .projects, .contact, .vortex{
       padding: 0;
-      height: 30.9%;
+      height: 33.33%;
       font-size: 1.2rem;
       li{
         display: inline-block;
@@ -82,7 +83,7 @@ main.main-container{
 
     .author{
       width: 12.1%;
-      top: 7%;
+      top: 3.5vw;
       font-size: .7rem;
       .pietrzak{
         text-align: center;
@@ -105,31 +106,31 @@ main.main-container{
     }
 
     .projects{
-      left: 20.05%;
-      top: 46.21%;
-      width: 20.01%;
+      left: 20%;
+      top: 50.05%;
+      width: 20.05%;
       padding: 1.2em 0 0 1em;
 
     }
 
     .contact{
       background: url("../../images/composition/square-white.png");
-      left: 56%;
-      top: 23.15%;
-      width: 16%;
+      left: 56.05%;
+      top: 25%;
+      width: 16.05%;
       padding: 1em 0 0 1.2em;
 
 
     }
 
     .vortex{
-      left: 71.95%;
-      top: 53.85%;
-      width: 16%;
+      left: 72.05%;
+      top: 58.35%;
+      width: 16.05%;
       padding: 1em 1.2em 0 1.2em;
     }
   }
-  @include mQLanscape(1200px) {
+  @include mQ(1200px) {
     .author{
       font-size: .8rem;
     }
@@ -137,7 +138,7 @@ main.main-container{
       font-size: 1.35rem;
     }
   }
-  @include mQLanscape(1300px) {
+  @include mQ(1300px) {
     .author{
       font-size: .9rem;
     }

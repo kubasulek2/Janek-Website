@@ -4,16 +4,80 @@ main.main-container{
   position: relative;
 
   @include mQLanscape(1024px) {
-    width: 95vw;
+    width: 1001px;
+    .row{
+      height: 40px;
+    }
+  }
+  @include mQ(1100px) {
+    width: 1076px;
+    .row{
+      height: 43px;
+    }
   }
   @include mQ(1200px) {
-    width: 95vw;
+    width: 1151px;
+    .row{
+      height: 46px;
+    }
+  }
+  @include mQ(1300px) {
+    width: 1251px;
+    .row{
+      height: 50px;
+    }
+  }
+  @include mQ(1400px) {
+    width: 1326px;
+    .row{
+      height: 53px;
+    }
+  }
+  @include mQ(1500px) {
+    width: 1426px;
+    .row{
+      height: 57px;
+    }
+  }
+  @include mQ(1600px) {
+    width: 1526px;
+    .row{
+      height: 61px;
+    }
+  }
+  @include mQ(1700px) {
+    width: 1626px;
+    .row{
+      height: 65px;
+    }
+  }
+  @include mQ(1800px) {
+    width: 1726px;
+    .row{
+      height: 69px;
+    }
+  }
+  @include mQ(1900px) {
+    width: 1801px;
+    .row{
+      height: 72px;
+    }
   }
 
+
   .content-wrapper{
-    width: calc(100% - 1px);
-    position: absolute;
-    background: red;
+    width: 100%;
+    margin-left: -1px;
+
+    @include mQLanscape(1024px) {
+      position: absolute;
+      //background: red;
+    }
+    @include mQ(1200px) {
+      position: absolute;
+      //background: red;
+    }
+
     &.rows12{
       height: 100%;
       top: 0;
@@ -63,12 +127,11 @@ main.main-container{
     @include mQLanscape(1024px){
       display: table;
     }
-    @include mQ(1200px) {
+    @include mQ(1100px) {
       display: table;
     }
     .row{
       display: table-row;
-      height: 3.8vw;
       &.hidden{
         display: none;
       }
