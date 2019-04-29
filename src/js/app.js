@@ -24,21 +24,21 @@ $(() => {
 
     // draw table rows (min 12, max 20)
     // add class to content-wrapper informing how many rows is there
-    if (availableRows > 12){
+    if (availableRows > 13){
       table.prev().removeClass()
         .addClass('content-wrapper')
         .addClass(`rows${(availableRows-1).toString()}`);
 
       row.each(function (index) {
-        index <= availableRows -2 ? $(this).removeClass('hidden'): $(this).addClass("hidden");
+        index <= availableRows -1 ? $(this).removeClass('hidden'): $(this).addClass("hidden");
       })
     } else{
       table.prev().removeClass()
         .addClass('content-wrapper')
-        .addClass(`rows12`);
+        .addClass(`rows13`);
 
       row.each(function (index) {
-        index <= 11 ? $(this).removeClass('hidden'): $(this).addClass("hidden");
+        index <= 12 ? $(this).removeClass('hidden'): $(this).addClass("hidden");
       })
     }
   };
