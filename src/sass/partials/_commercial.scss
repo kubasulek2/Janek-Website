@@ -116,7 +116,7 @@
   @include mQLanscape(1024px){
     .projects.commercial{
       display: block;
-      top: 15.35%;
+      top: 8.42%;
 
       li:last-child, li:first-child{
         border-bottom: none;
@@ -126,6 +126,7 @@
       display: none;
     }
     .image{
+      z-index: 2;
       display: none;
       margin: 0!important;
       position: absolute;
@@ -162,27 +163,29 @@
     .nav-right div, .nav-left div{
       display: block;
       width: 4%;
-      height: 7.8%;
+      height: 8.33%;
       position: absolute;
       cursor: pointer;
 
       &.prev{
+        z-index: 2;
         background: url("../../images/composition/arrow.png") center center/contain no-repeat;
         display: none;
       }
       &.next{
+        z-index: 2;
         background: url("../../images/composition/arrow-outline.png") center center/contain no-repeat;
       }
 
     }
     .nav-right{
       .prev{
-        left: 88%;
-        top: 15.5%
+        left: 88.05%;
+        top: 16.55%
       }
       .next{
-        left: 88%;
-        top: 38.55%;
+        left: 88.05%;
+        top: 41.65%;
       }
     }
     .nav-left{
@@ -197,6 +200,7 @@
     }
 
     .theme{
+      z-index: 2;
       position: absolute;
       display: block;
       width: 20%;

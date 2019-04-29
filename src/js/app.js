@@ -7,8 +7,8 @@ $(() => {
 
   // define smaller screens
 
-  let mobileViewport = window.matchMedia("screen and (max-width: 1023px) and (orientation: landscape)");
-  let tabletViewport = window.matchMedia("screen and (max-width: 1199px)");
+  let mobileViewport = window.matchMedia("screen and (max-width: 1023px)");
+  let tabletViewport = window.matchMedia("screen and (max-width: 1199px) and (orientation: portrait)");
 
   // drawing a table relative to viewport
 
@@ -216,6 +216,7 @@ $(() => {
  showImagesCommercial();
  defineTable();
  $( window ).on("resize",defineTable);
+
 
 });
 
