@@ -30,10 +30,11 @@
 
   // for larger screens
 
-  @include mQLanscape(1024px){
+  @include mQLandscape{
     .contact-details, .blob-large{
       position: absolute;
       margin: 0;
+      z-index: 5;
     }
     .contact-details{
       width: 36.1%;

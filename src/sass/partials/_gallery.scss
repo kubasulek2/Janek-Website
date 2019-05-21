@@ -69,7 +69,7 @@
 }
 
 // larger screens
-@include mQ(1024px){
+@include mQLandscape{
   main{
     .author{
       width: 50%;
@@ -96,6 +96,7 @@
 .picture{
   width: 24%;
   position: absolute;
+  z-index: 3;
   img{
     width: 100%;
     cursor: pointer;

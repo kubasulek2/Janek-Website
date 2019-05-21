@@ -3,8 +3,8 @@
     @content
   }
 }
-@mixin mQLanscape($width) {
-  @media (min-width: $width) and (orientation: landscape){
+@mixin mQLandscape {
+  @media (min-width: 1024px) and (orientation: landscape),(min-width: 1200px){
     @content
   }
 }

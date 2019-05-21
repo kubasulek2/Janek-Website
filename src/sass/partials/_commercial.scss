@@ -113,7 +113,7 @@
 
 //for larger screens
 
-  @include mQLanscape(1024px){
+  @include mQLandscape{
     .projects.commercial{
       display: block;
       top: 15.41%;

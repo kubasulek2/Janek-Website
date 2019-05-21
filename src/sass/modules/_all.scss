@@ -13,18 +13,13 @@ body{
   text-transform: uppercase;
   min-height: 100%;
 
-  @include mQLanscape(1024px) {
+  @include mQLandscape {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
   }
-  @include mQ(1200px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+
 
   a{
     color:inherit;
