@@ -72,7 +72,7 @@ main.main-container{
 
     .projects, .contact, .vortex{
       padding: 0;
-      height: 33.33%;
+      height: 30.75%;
       font-size: 1.2rem;
       li{
         display: inline-block;
@@ -106,8 +106,8 @@ main.main-container{
     }
 
     .projects{
-      left: 20.05%;
-      top: 50.05%;
+      left: 20%;
+      top: 46.15%;
       width: 20.05%;
       padding: 1.2em 0 0 1em;
 
@@ -115,8 +115,8 @@ main.main-container{
 
     .contact{
       background: url("../../images/composition/square-white.png");
-      left: 56.05%;
-      top: 25.06%;
+      left: 56%;
+      top: 23.10%;
       width: 16.05%;
       padding: 1em 0 0 1.2em;
 
@@ -124,35 +124,12 @@ main.main-container{
     }
 
     .vortex{
-      left: 72.05%;
-      top: 58.35%;
+      left: 72%;
+      top: 53.83%;
       width: 16.05%;
       padding: 1em 1.2em 0 1.2em;
     }
 
-    //.content-wrapper{
-    //  &.rows18, &.rows19, &.rows20{
-    //    .logo{
-    //      top: 15%;
-    //
-    //    }
-    //    .projects, .contact, .vortex{
-    //      height: 28.57%;
-    //    }
-    //
-    //    .projects{
-    //      top: 50.05%;
-    //    }
-    //
-    //    .contact{
-    //      top: 28.57%;
-    //      }
-    //
-    //    .vortex{
-    //      top: 57.14%;
-    //      }
-    //  }
-    //}
   }
   @include mQ(1200px) {
     .author{

@@ -67,15 +67,15 @@ main.main-container{
 
   .content-wrapper{
     width: 100%;
-    //margin-left:;
+    //margin-left:-1px;
 
     @include mQLanscape(1024px) {
       position: absolute;
-      background: red;
+      //background: red;
     }
     @include mQ(1200px) {
       position: absolute;
-      background: red;
+      //background: red;
     }
 
     &.rows13{
@@ -107,7 +107,7 @@ main.main-container{
       top: 15.79%;
     }
     &.rows20{
-      height: 75%;
+      height: 65%;
       top: 15%;
     }
 
