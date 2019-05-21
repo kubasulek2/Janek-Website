@@ -8,9 +8,6 @@
     @content
   }
 }
-@mixin grid-height($width){
-  height: calc(#{$width} * .505);
-}
 
 @font-face {
   font-family: 'Untitled Sans Test';

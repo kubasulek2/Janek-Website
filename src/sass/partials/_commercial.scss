@@ -116,7 +116,7 @@
   @include mQLanscape(1024px){
     .projects.commercial{
       display: block;
-      top: 8.42%;
+      top: 15.41%;
 
       li:last-child, li:first-child{
         border-bottom: none;
@@ -132,16 +132,16 @@
       position: absolute;
 
       &:nth-of-type(odd){
-        top: 54%;
+        top: 53.84%;
         left: 28%;
       }
 
       &:nth-of-type(even){
-        top: 7.95%;
+        top: 7.73%;
         left: 52%;
       }
       &.xlarge{
-        width: 31.95%;
+        width: 32%;
       }
       &.large{
         width: 28%;
@@ -181,11 +181,11 @@
     .nav-right{
       .prev{
         left: 88.05%;
-        top: 16.55%
+        top: 15.00%
       }
       .next{
         left: 88.05%;
-        top: 41.65%;
+        top: 38.15%;
       }
     }
     .nav-left{

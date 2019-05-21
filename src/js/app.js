@@ -182,7 +182,7 @@ $(() => {
     // handle display while resize and change screen orientation
 
 
-    if(!(mobileViewport.matches || tabletViewport.matches)) {
+    if( !(mobileViewport.matches || tabletViewport.matches) ) {
       $(images[0]).show();
       $(images[1]).show();
     }
@@ -195,9 +195,7 @@ $(() => {
         $(images).hide();
         $(images[imagesInfo.leftIndex]).show();
         $(images[imagesInfo.rightIndex]).show();
-
       }
-
     });
 
     tabletViewport.addListener(function(mq) {

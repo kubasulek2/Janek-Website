@@ -8,7 +8,7 @@
 
 // for larger screens
 
-  @include mQ(1024px){
+  @include mQLanscape(1024px){
     .projects.personal{
       display: block;
       top: 15.35%;
