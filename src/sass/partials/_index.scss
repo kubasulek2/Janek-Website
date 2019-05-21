@@ -130,29 +130,29 @@ main.main-container{
       padding: 1em 1.2em 0 1.2em;
     }
 
-    .content-wrapper{
-      &.rows18, &.rows19, &.rows20{
-        .logo{
-          top: 15%;
-
-        }
-        .projects, .contact, .vortex{
-          height: 28.57%;
-        }
-
-        .projects{
-          top: 50.05%;
-        }
-
-        .contact{
-          top: 28.57%;
-          }
-
-        .vortex{
-          top: 57.14%;
-          }
-      }
-    }
+    //.content-wrapper{
+    //  &.rows18, &.rows19, &.rows20{
+    //    .logo{
+    //      top: 15%;
+    //
+    //    }
+    //    .projects, .contact, .vortex{
+    //      height: 28.57%;
+    //    }
+    //
+    //    .projects{
+    //      top: 50.05%;
+    //    }
+    //
+    //    .contact{
+    //      top: 28.57%;
+    //      }
+    //
+    //    .vortex{
+    //      top: 57.14%;
+    //      }
+    //  }
+    //}
   }
   @include mQ(1200px) {
     .author{

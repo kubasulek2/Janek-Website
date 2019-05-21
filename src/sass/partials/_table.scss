@@ -67,15 +67,15 @@ main.main-container{
 
   .content-wrapper{
     width: 100%;
-    margin-left: -1px;
+    //margin-left:;
 
     @include mQLanscape(1024px) {
       position: absolute;
-      //background: red;
+      background: red;
     }
     @include mQ(1200px) {
       position: absolute;
-      //background: red;
+      background: red;
     }
 
     &.rows13{
@@ -83,32 +83,32 @@ main.main-container{
       top: 0;
     }
     &.rows14{
-      height: 92.2%;
-      top: 7.8%;
-    }
-    &.rows15{
-      height: 85.71%;
+      height: 92.85%;
       top: 7.14%;
     }
-    &.rows16{
-      height: 80%;
+    &.rows15{
+      height: 86.66%;
       top: 6.67%;
     }
-    &.rows17{
-      height: 75%;
-      top: 12.5%;
+    &.rows16{
+      height: 81.25%;
+      top: 6.25%;
     }
-    &.rows18{
-      height: 70.59%;
+    &.rows17{
+      height: 76.47%;
       top: 11.76%;
     }
-    &.rows19{
-      height: 77.78%;
+    &.rows18{
+      height: 72.22%;
       top: 11.11%;
     }
-    &.rows20{
-      height: 73.68%;
+    &.rows19{
+      height: 68.42%;
       top: 15.79%;
+    }
+    &.rows20{
+      height: 75%;
+      top: 15%;
     }
 
   }

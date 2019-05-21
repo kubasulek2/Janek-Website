@@ -22,7 +22,7 @@ $(() => {
     // to avoid content-wrapper class going over "rows20"
     availableRows = availableRows > 21 ? 21 : availableRows;
 
-    // draw table rows (min 12, max 20)
+    // draw table rows (min 13, max 20)
     // add class to content-wrapper informing how many rows is there
     if (availableRows > 13){
       table.prev().removeClass()
@@ -30,7 +30,7 @@ $(() => {
         .addClass(`rows${(availableRows-1).toString()}`);
 
       row.each(function (index) {
-        index <= availableRows -1 ? $(this).removeClass('hidden'): $(this).addClass("hidden");
+        index <= availableRows -2 ? $(this).removeClass('hidden'): $(this).addClass("hidden");
       })
     } else{
       table.prev().removeClass()
