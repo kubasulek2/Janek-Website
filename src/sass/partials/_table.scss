@@ -134,6 +134,17 @@ main.main-container{
         .cell {
           &:first-child, &:nth-child(2), &:nth-child(3) {
             visibility: hidden;
+            border-color: transparent;  //for mozilla
+            }
+          &:nth-child(3){
+            border-right-color: initial;
+          }
+        }
+      }
+      &:nth-child(2){
+        .cell{
+          &:first-child, &:nth-child(2), &:nth-child(3){
+            border-bottom-color: initial;
           }
         }
       }
