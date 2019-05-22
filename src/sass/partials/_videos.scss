@@ -27,14 +27,19 @@
     }
   }
   @include mQLandscape{
-    //background: initial;
+    background: rgba(255,255,255,.6);
     position: absolute;
     width: 100%;
     height: 100%;
 
     .vid-container{
       transform: translateY(0);
-      width: 50%;
+      &.x-large{
+        width: 60%;
+      }
+      &.large{
+        width: 50%;
+      }
       &.medium{
         width: 35%;
       }

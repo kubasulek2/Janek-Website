@@ -6,23 +6,40 @@ $(()=>{
   $videos.on('click', function (e) {
     e.stopPropagation();
 
+    const videoRatio = parseFloat( $(this).attr("data-ratio") );
     const vidBackground = $('<div class="vid-background"></div>');
-
-
     const vidContainer = $('<div class="vid-container"></div>');
-    const iframe = $('<iframe></iframe>',{ frameborder:"0", allowfullscreen:'', webkitallowfullscreen:'', mozallowfullscreen:''})
-      .attr('src', $(this).data("src"));
-    vidContainer.append(iframe);
 
+
+    const iframe = $('<iframe></iframe>',{ frameborder:"0", allowfullscreen:'', webkitallowfullscreen:'', mozallowfullscreen:''})
+      .attr('src', $(this)
+        .data("src"));
+
+    vidContainer.append(iframe);
     vidBackground.append(vidContainer);
+
     $main.append(vidBackground);
     $(this).attr("class").includes("odd") ? vidContainer.addClass("odd"): vidContainer.addClass("even");
-    $(this).attr("class").includes("small")  ? vidContainer.addClass("small"): null;
-    $(this).attr("class").includes("medium") && !$(this).attr("class").includes("large") ? vidContainer.addClass("medium"): null;
 
-    const videoRatio = $(this).attr("data-ratio");
+    switch (true) {
+      case videoRatio < 45:
+        vidContainer.addClass("x-large");
+        break;
+      case videoRatio < 70:
+        vidContainer.addClass("large");
+        break;
+      case videoRatio <= 120:
+        vidContainer.addClass("medium");
+        break;
+      case videoRatio > 120:
+        vidContainer.addClass("small");
+        break;
+    }
+
+   /* $(this).attr("class").includes("small")  ? vidContainer.addClass("small"): null;
+    $(this).attr("class").includes("medium") && !$(this).attr("class").includes("large") ? vidContainer.addClass("medium"): null;*/
     const videoWidth = vidContainer.css("width");
-    const videoHeight = parseFloat(videoWidth) * parseFloat(videoRatio)/100;
+    const videoHeight = parseFloat(videoWidth) * videoRatio/100;
     vidContainer.css("height", videoHeight);
     iframe.css("height", videoHeight);
 
