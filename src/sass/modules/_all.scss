@@ -12,6 +12,7 @@ body{
   font-family: 'Untitled Sans Test';
   text-transform: uppercase;
   min-height: 100%;
+  font-size: 100%;
 
   @include mQLandscape {
     display: flex;

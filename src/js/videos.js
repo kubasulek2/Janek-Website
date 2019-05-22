@@ -16,8 +16,9 @@ $(()=>{
 
     vidBackground.append(vidContainer);
     $main.append(vidBackground);
-    $(this).attr("class").includes("odd") ? vidContainer.addClass("odd"):vidContainer.addClass("even");
-    $(this).attr("class").includes("small") || $(this).attr("class").includes("small") ? vidContainer.addClass("small"): null;
+    $(this).attr("class").includes("odd") ? vidContainer.addClass("odd"): vidContainer.addClass("even");
+    $(this).attr("class").includes("small")  ? vidContainer.addClass("small"): null;
+    $(this).attr("class").includes("medium") && !$(this).attr("class").includes("large") ? vidContainer.addClass("medium"): null;
 
     const videoRatio = $(this).attr("data-ratio");
     const videoWidth = vidContainer.css("width");
@@ -25,8 +26,9 @@ $(()=>{
     vidContainer.css("height", videoHeight);
     iframe.css("height", videoHeight);
 
-    $body.one('click', function () {
-      vidBackground.remove();
+    vidBackground.one('click', function (event) {
+      event.stopImmediatePropagation();
+      $(this).remove();
     })
   });
 

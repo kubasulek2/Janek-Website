@@ -206,12 +206,20 @@
       width: 20%;
       top: 57.5%;
       left: 64%;
+
       img{
         width: 100%;
         display: none;
         user-select: none;
+
         &.vertical{
           width: 70%;
+        }
+        &.horizontal{
+          width: 125%;
+        }
+        &.vertical-thin{
+          width: 60%;
         }
       }
     }

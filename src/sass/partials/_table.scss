@@ -137,11 +137,11 @@ main.main-container{
             border-color: transparent;  //for mozilla
             }
           &:nth-child(3){
-            border-right-color: initial;
+            border-right-color: initial; // for mozilla
           }
         }
       }
-      &:nth-child(2){
+      &:nth-child(2){ // for mozilla
         .cell{
           &:first-child, &:nth-child(2), &:nth-child(3){
             border-bottom-color: initial;
