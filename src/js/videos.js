@@ -36,8 +36,6 @@ $(()=>{
         break;
     }
 
-   /* $(this).attr("class").includes("small")  ? vidContainer.addClass("small"): null;
-    $(this).attr("class").includes("medium") && !$(this).attr("class").includes("large") ? vidContainer.addClass("medium"): null;*/
     const videoWidth = vidContainer.css("width");
     const videoHeight = parseFloat(videoWidth) * videoRatio/100;
     vidContainer.css("height", videoHeight);

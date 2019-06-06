@@ -83,8 +83,9 @@ main.main-container{
 
     .author{
       width: 12.1%;
-      top: 3.5vw;
-      font-size: .7rem;
+      top: 0;
+      transform: translateY(332%);
+      font-size: .8rem;
       .pietrzak{
         text-align: center;
         width: 100%;
