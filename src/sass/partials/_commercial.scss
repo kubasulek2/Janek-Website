@@ -169,33 +169,34 @@
 
       &.prev{
         z-index: 2;
-        background: url("../../images/composition/arrow.png") center center/contain no-repeat;
+        background: url("../../images/composition/arrow-left.png") center center/contain no-repeat;
         display: none;
       }
       &.next{
         z-index: 2;
-        background: url("../../images/composition/arrow-outline.png") center center/contain no-repeat;
+        background: url("../../images/composition/arrow-right.png") center center/contain no-repeat;
       }
 
     }
     .nav-right{
       .prev{
-        left: 88.05%;
+        left: 88%;
         top: 15.00%
       }
       .next{
-        left: 88.05%;
+        left: 88%;
         top: 38.15%;
       }
     }
     .nav-left{
       .prev{
         top: 77%;
-        left: 12.1%;
+        left: 12%;
       }
       .next{
         top: 69.2%;
-        left: 20.1%;
+        left: 20%;
+
       }
     }
 
