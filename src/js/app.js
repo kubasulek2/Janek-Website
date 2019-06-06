@@ -58,13 +58,13 @@ $(() => {
         if (prevNum === 0){
           prevNum = 1;
           themes.each(function (i, e) {
-            i === 1 ? $(e).css("display", "block") : $(e).css("display", "none");
+            i === 1 ? $(e).fadeIn(600) : $(e).css("display", "none");
           })
 
         } else{
           prevNum = draw;
           themes.each(function (i, e) {
-            i === draw ? $(e).css("display", "block") : $(e).css("display", "none");
+            i === draw ? $(e).fadeIn(600) : $(e).css("display", "none");
           })
         }
       }
