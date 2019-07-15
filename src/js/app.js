@@ -46,14 +46,15 @@ $(() => {
 	// drawing themes
 	let prevNum = 2;  // first displayed image index
 	let disableThemeChange = false;
-
+	
 	const drawTheme = (themes) => {
-
+		
 		if (disableThemeChange) return;
-
+		
 		//image index can be larger than actual images index, to simulate drawing no image
 		let draw = Math.floor(Math.random() * (themes.length + 2));
 		let disableTime = Math.floor(Math.random() * (20 - 10)) + 10;
+		console.log(disableTime);
 
 
 		if (draw === prevNum || draw === 1) { //image 1 is restricted to show after another image
