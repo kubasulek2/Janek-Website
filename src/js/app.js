@@ -1,4 +1,6 @@
 $(() => {
+
+
 	// define image index object to properly show images after resizing
 	const imagesInfo = {
 		leftIndex: 0,
