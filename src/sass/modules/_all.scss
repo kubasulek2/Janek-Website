@@ -10,7 +10,9 @@ html{
 }
 body{
   font-family: 'Untitled Sans Test', Arial, sans-serif;
-  text-transform: uppercase;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   min-height: 100%;
   font-size: 100%;
 

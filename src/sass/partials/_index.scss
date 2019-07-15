@@ -73,11 +73,12 @@ main.main-container{
     .projects, .contact, .vortex{
       padding: 0;
       height: 30.75%;
-      font-size: 1.2rem;
+			font-size: 1.2rem;
+	
       li{
         display: inline-block;
         border-bottom: .1rem solid black;
-        margin-bottom: .6vh;
+        margin-bottom: .9vh;
       }
     }
 

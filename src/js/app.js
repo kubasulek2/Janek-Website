@@ -1,6 +1,5 @@
 $(() => {
 
-
 	// define image index object to properly show images after resizing
 	const imagesInfo = {
 		leftIndex: 0,
@@ -48,15 +47,14 @@ $(() => {
 	// drawing themes
 	let prevNum = 2;  // first displayed image index
 	let disableThemeChange = false;
-	
+
 	const drawTheme = (themes) => {
-		
+
 		if (disableThemeChange) return;
-		
+
 		//image index can be larger than actual images index, to simulate drawing no image
 		let draw = Math.floor(Math.random() * (themes.length + 2));
 		let disableTime = Math.floor(Math.random() * (20 - 10)) + 10;
-		console.log(disableTime);
 
 
 		if (draw === prevNum || draw === 1) { //image 1 is restricted to show after another image
@@ -69,9 +67,9 @@ $(() => {
 				setTimeout(() => {
 					themes.each(function (i, e) {
 						i === 1 ? $(e).fadeIn(500) : $(e).hide();
-					})	
+					})
 				}, disableTime * 500);
-				
+
 			} else {
 				prevNum = draw;
 				setTimeout(() => {
@@ -198,20 +196,28 @@ $(() => {
 
 		// handle display while resize and change screen orientation
 
+		// on loading page if desktop, show proper immages and handle small videos
 
 		if (!(mobileViewport.matches || tabletViewport.matches)) {
 			$(images[0]).show();
 			$(images[1]).show();
+			desktopHandleMiniatures();
+		} else {
+			mobileHandleMiniatures();
+
 		}
 
 		mobileViewport.addListener(function (mq) {
 
 			if (mq.matches) {
 				$(images).show()
+				mobileHandleMiniatures();
+
 			} else {
 				$(images).hide();
 				$(images[imagesInfo.leftIndex]).show();
 				$(images[imagesInfo.rightIndex]).show();
+				desktopHandleMiniatures();
 			}
 		});
 
@@ -219,19 +225,65 @@ $(() => {
 
 			if (mq.matches) {
 				$(images).show()
+				mobileHandleMiniatures();
+
 			} else {
 				$(images).hide();
 				$(images[imagesInfo.leftIndex]).show();
 				$(images[imagesInfo.rightIndex]).show();
+				desktopHandleMiniatures();
 
 			}
 		});
 
 	};
+
+	const desktopHandleMiniatures = function () {
+		$('.image')
+			.off('mouseenter mouseleave scroll')
+			.on('mouseenter mouseleave', function (event) {
+
+				const video = this.querySelector('video');
+				if (event.type === 'mouseenter')
+					video !== null ? video.play() : null;
+				else
+					video !== null ? video.pause() : null;
+			});
+	}
+
+	const mobileHandleMiniatures = function () {
+		$(window)
+			.off('mouseenter mouseleave scroll')
+			.on('scroll', function () {
+				
+				const 
+					videos = $('.content-wrapper figure:not(.theme,.photos)'),
+					topVideo = [...videos]
+					.filter((el) => el.getBoundingClientRect().top > 0)
+					.reduce((prev, current) => (prev.getBoundingClientRect().top < current.getBoundingClientRect().top) ? prev : current)
+				
+				videos.each((i,el) => {
+				//video must have muted attr for this code to work!!!
+					const video = el.querySelector('video');
+					if (el === topVideo){
+						video.readyState === 4 ? video.play() : null;
+					} else{
+						video.pause();
+					}
+
+				})
+				
+
+
+			});
+	}
+
 	showImagesCommercial();
 	defineTable();
 	$(window).on("resize", defineTable);
 
 
 });
+
+
 

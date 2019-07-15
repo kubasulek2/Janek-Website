@@ -15,7 +15,24 @@
   .image {
     position: relative;
     margin-bottom: 3.5rem;
-    cursor: pointer;
+		cursor: pointer;
+
+		&.last{
+			margin-bottom: 50vh;
+		}
+		
+		
+		video{
+			width: 100%;
+			display: block;
+		}
+		img{
+			display: block;
+		}
+		.poster{
+			display: none;
+		}
+		
 
     &:first-of-type{
       margin-top: 6rem;
@@ -103,7 +120,8 @@
       width: 100%;
     }
 
-  }
+	}
+	
   .theme{
     display: none;
   }
@@ -129,7 +147,39 @@
       z-index: 2;
       display: none;
       margin: 0!important;
-      position: absolute;
+			position: absolute;
+			overflow: hidden;
+			&.last{
+				margin-bottom: initial;
+			}
+			
+			.poster{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 1.1rem;
+				text-align: center;
+				line-height: 2rem;
+
+				@media (min-width:1500px) {
+					font-size: 1.5rem;
+				}
+				
+			}
+			&:hover .poster{
+				display: none;
+			}
+			&.odd .poster{
+				background: rgb(252, 82, 57)
+			}
+			&.even .poster{
+				background: rgb(254, 238, 53)
+				
+			}
 
       &:nth-of-type(odd){
         top: 53.84%;

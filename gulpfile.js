@@ -48,15 +48,15 @@ gulp.task( 'scripts', function () {
 gulp.task( 'images', function () {
 	return gulp
 		.src( 'src/images/**' )
-		.pipe( $.changed( 'images' ) )
+		/* .pipe( $.changed( 'images' ) )
 		.pipe( $.imagemin( {
 			// Lossless conversion to progressive JPGs
 			progressive: true,
 			// Interlace GIFs for progressive rendering
 			interlaced: true
-		} ) )
+		} ) ) */
 		.pipe( gulp.dest( 'public/images' ) )
-		.pipe( $.size( {title: 'images'} ) );
+		/* .pipe( $.size( {title: 'images'} ) ); */
 } );
 
 
