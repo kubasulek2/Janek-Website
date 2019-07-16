@@ -158,7 +158,6 @@
 				width: 100%;
 				height: 100%;
 				top: 0;
-				display: flex;
 				justify-content: center;
 				align-items: center;
 				font-size: 1.1rem;
@@ -170,9 +169,7 @@
 				}
 				
 			}
-			&:hover .poster{
-				display: none;
-			}
+
 			&.odd .poster{
 				background: rgb(252, 82, 57)
 			}

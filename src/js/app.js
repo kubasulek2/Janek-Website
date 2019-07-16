@@ -237,8 +237,47 @@ $(() => {
 		});
 
 	};
-
 	const desktopHandleMiniatures = function () {
+		const figures = $('.content-wrapper figure:not(.theme)')
+
+		$(window).on('mousemove', function (e) {
+			e = e || window.event;
+			const visibleVideos = figures.filter(':visible'),
+				topVideo = visibleVideos[1].children[0],
+				bottomVideo = visibleVideos[0].children[0]
+				console.log(bottomVideo);
+				
+
+			if (e.clientY < document.documentElement.clientHeight / 2) 
+			{
+				//hide top video poster, show bottom video poster, play top pause bottom video
+				$(visibleVideos[1])
+					.find('.poster')
+					.css('display', 'none');
+					
+
+				$(visibleVideos[0])
+					.find('.poster')
+					.css('display', 'flex');
+
+				topVideo.tagName === 'VIDEO' && topVideo.paused ? topVideo.play() : null;  
+				bottomVideo.tagName === 'VIDEO' && !bottomVideo.paused ? bottomVideo.pause() : null;  
+			} 
+			else 
+			{
+				$(visibleVideos[0])
+					.find('.poster')
+					.css('display', 'none');
+				$(visibleVideos[1])
+					.find('.poster')
+					.css('display', 'flex');
+				
+				bottomVideo.tagName === 'VIDEO' && bottomVideo.paused ? bottomVideo.play() : null; topVideo.tagName === 'VIDEO' && !topVideo.paused ? topVideo.pause() : null; 	
+			}
+
+		})
+	}
+	/* const desktopHandleMiniatures = function () {
 		$('.image')
 			.off('mouseenter mouseleave scroll')
 			.on('mouseenter mouseleave', function (event) {
@@ -249,30 +288,30 @@ $(() => {
 				else
 					video !== null ? video.pause() : null;
 			});
-	}
+	} */
 
 	const mobileHandleMiniatures = function () {
 		$(window)
 			.off('mouseenter mouseleave scroll')
 			.on('scroll', function () {
-				
-				const 
+
+				const
 					videos = $('.content-wrapper figure:not(.theme,.photos)'),
 					topVideo = [...videos]
-					.filter((el) => el.getBoundingClientRect().top > 0)
-					.reduce((prev, current) => (prev.getBoundingClientRect().top < current.getBoundingClientRect().top) ? prev : current)
-				
-				videos.each((i,el) => {
-				//video must have muted attr for this code to work!!!
+						.filter((el) => el.getBoundingClientRect().top > 0)
+						.reduce((prev, current) => (prev.getBoundingClientRect().top < current.getBoundingClientRect().top) ? prev : current)
+
+				videos.each((i, el) => {
+					//video must have muted attr for this code to work!!!
 					const video = el.querySelector('video');
-					if (el === topVideo){
+					if (el === topVideo) {
 						video.readyState === 4 ? video.play() : null;
-					} else{
+					} else {
 						video.pause();
 					}
 
 				})
-				
+
 
 
 			});
