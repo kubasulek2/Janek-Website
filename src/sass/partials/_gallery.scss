@@ -94,11 +94,15 @@
 }
 
 .picture{
-  width: 30%;
+  width: 35%;
   position: absolute;
   z-index: 3;
   img{
     width: 100%;
     cursor: pointer;
-  }
+	}
+	
+	&.vert{
+		width: 50%;
+	}
 }
