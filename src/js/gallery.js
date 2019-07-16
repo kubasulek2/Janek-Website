@@ -11,32 +11,25 @@ $(()=>{
   // create array of kampania smieciowa gallery sources
   const galleryKampania = $('.kampania');
   const galleryKampaniaPics = [
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0090-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0119-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0244-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0324-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0336-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0350-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0370-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0394-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0418-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0430-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0439-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0452-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0578-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0608-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0636-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0645-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0672-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0713-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0798-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0834-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0881-sRGB.jpg",
-    "images/kampania%20smieciowa/Segregacja-uMstWarszawa0915-sRGB.jpg"
+    "images/kampania%20smieciowa/002.jpg",
+    "images/kampania%20smieciowa/003-vert.jpg",
+    "images/kampania%20smieciowa/004-vert.jpg",
+    "images/kampania%20smieciowa/005.jpg",
+    "images/kampania%20smieciowa/006.jpg",
+    "images/kampania%20smieciowa/007.jpg",
+    "images/kampania%20smieciowa/008-vert.jpg",
+    "images/kampania%20smieciowa/009.jpg",
+    "images/kampania%20smieciowa/010.jpg",
+    "images/kampania%20smieciowa/011.jpg",
+    "images/kampania%20smieciowa/012_2.jpg",
+    "images/kampania%20smieciowa/012.jpg",
+    "images/kampania%20smieciowa/013.jpg",
+    "images/kampania%20smieciowa/014.jpg",
+    "images/kampania%20smieciowa/015-vert.jpg",
 	];
 	const galleryKukBuk = $('.kukbuk');
   const galleryKukBukPics = [
-    "images/kukbuk/kukbuk-01.jpg",
+    "images/kukbuk/kukbuk-01-vert.jpg",
     "images/kukbuk/kukbuk-02-vert.jpg",
     "images/kukbuk/kukbuk-03.jpg",
     "images/kukbuk/kukbuk-04-vert.jpg",
@@ -48,7 +41,7 @@ $(()=>{
   let prevHeight = -1;
 
   const drawImagePosition = (side) =>{
-    const widths = [52,50.1,48.2,46.6,53.7,56,57.2,59];
+    const widths = [52,50.1,48.2,46.6,43.7,41.22,50.2,47.4];
     const heights = [6.5, 7.7, 8.3, 9.2, 10, 10.9, 11.6, 12.1, 13];
 		
 		let position =[];
@@ -62,7 +55,7 @@ $(()=>{
       prevWidth = currWidth;
       prevHeight = currHeight;
 
-      side === 'right' ? position.push(widths[currWidth]):position.push(widths[currWidth]-35);
+      side === 'right' ? position.push(widths[currWidth]):position.push(widths[currWidth]-30);
       position.push(heights[currHeight]);
 
       return position
@@ -77,8 +70,11 @@ $(()=>{
     let frame = $('<figure class="picture">');
 		let image = $('<img>');
     image.attr('src', images[counter]);
-		image.attr('src').includes('vert') ? frame.addClass('vert'): null;
-    frame.append(image);
+		
+		if(counter < images.length)
+			image.attr('src').includes('vert') ? frame.addClass('vert'): null;
+		
+		frame.append(image);
     $('.main-container').append(frame);
 
     frame.on('click', function (e) {
