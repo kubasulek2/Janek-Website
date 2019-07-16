@@ -89,7 +89,7 @@ $(() => {
 	// handling left and right side galleries
 	const handleLeftGallery = (index, images, themes) => {
 		let counter = index;
-
+		
 		$(".nav-left > .next").on("click", function () {
 
 			drawTheme(themes);
@@ -164,9 +164,11 @@ $(() => {
 
 			if (!(images.length % 2) && counter === images.length - 1) {
 				$(this).next().show();
+				
 
 			} else if (images.length % 2 && counter === images.length - 2) {
-				$(this).next().show()
+				$(this).next().show();
+				
 			}
 
 			$(images[counter]).hide();
@@ -182,60 +184,63 @@ $(() => {
 	};
 
 	const showImagesCommercial = () => {
-		const images = $('.image');
-		const themes = $('.theme img');
+		if($('body').hasClass('multimedia')){
+			const images = $('.image');
+			const themes = $('.theme img');
 
-		let leftIndex = 0;
-		let rightIndex = 1;
-		themes.eq(2).show();
-		//drawTheme(themes);
-		handleLeftGallery(leftIndex, images, themes);
-		handleRightGallery(rightIndex, images, themes);
+			let leftIndex = 0;
+			let rightIndex = 1;
+			themes.eq(2).show();
+			//drawTheme(themes);
+			handleLeftGallery(leftIndex, images, themes);
+			handleRightGallery(rightIndex, images, themes);
 
 
 
-		// handle display while resize and change screen orientation
+			// handle display while resize and change screen orientation
 
-		// on loading page if desktop, show proper immages and handle small videos
+			// on loading page if desktop, show proper immages and handle small videos
 
-		if (!(mobileViewport.matches || tabletViewport.matches)) {
-			$(images[0]).show();
-			$(images[1]).show();
-			desktopHandleMiniatures();
-		} else {
-			mobileHandleMiniatures();
+			if (!(mobileViewport.matches || tabletViewport.matches)) {
+				$(images[0]).show();
+				$(images[1]).show();
+				desktopHandleMiniatures();
+			} else {
+				mobileHandleMiniatures();
 
+			}
+
+			mobileViewport.addListener(function (mq) {
+
+				if (mq.matches) {
+					$(images).show();
+					$('.poster').hide();
+					mobileHandleMiniatures();
+
+				} else {
+					$(images).hide();
+					$(images[imagesInfo.leftIndex]).show();
+					$(images[imagesInfo.rightIndex]).show();
+					desktopHandleMiniatures();
+				}
+			});
+
+			tabletViewport.addListener(function (mq) {
+
+				if (mq.matches) {
+					$(images).show();
+					$('.poster').hide();
+					mobileHandleMiniatures();
+
+				} else {
+					$(images).hide();
+					$(images[imagesInfo.leftIndex]).show();
+					$(images[imagesInfo.rightIndex]).show();
+					desktopHandleMiniatures();
+
+				}
+			});
 		}
-
-		mobileViewport.addListener(function (mq) {
-
-			if (mq.matches) {
-				$(images).show()
-				mobileHandleMiniatures();
-
-			} else {
-				$(images).hide();
-				$(images[imagesInfo.leftIndex]).show();
-				$(images[imagesInfo.rightIndex]).show();
-				desktopHandleMiniatures();
-			}
-		});
-
-		tabletViewport.addListener(function (mq) {
-
-			if (mq.matches) {
-				$(images).show()
-				mobileHandleMiniatures();
-
-			} else {
-				$(images).hide();
-				$(images[imagesInfo.leftIndex]).show();
-				$(images[imagesInfo.rightIndex]).show();
-				desktopHandleMiniatures();
-
-			}
-		});
-
 	};
 	const desktopHandleMiniatures = function () {
 		const figures = $('.content-wrapper figure:not(.theme)')
@@ -245,16 +250,16 @@ $(() => {
 			topVideo = visibleVideos.filter('.even').children()[0],
 			bottomVideo = visibleVideos.filter('.odd').children()[0];
 			$(visibleVideos.filter('.even'))
-					.find('.poster')
-					.css('display', 'none');
-					
+			.find('.poster')
+			.css('display', 'none');
+			
 
-				$(visibleVideos.filter('.odd'))
-					.find('.poster')
-					.css('display', 'flex');
+		$(visibleVideos.filter('.odd'))
+			.find('.poster')
+			.css('display', 'flex');
 
-				topVideo.tagName === 'VIDEO' && topVideo.paused ? topVideo.play() : null;  
-				bottomVideo.tagName === 'VIDEO' && !bottomVideo.paused ? bottomVideo.pause() : null;  
+		topVideo.tagName === 'VIDEO' && topVideo.paused ? topVideo.play() : null;  
+		bottomVideo.tagName === 'VIDEO' && !bottomVideo.paused ? bottomVideo.pause() : null;  
 
 
 		$(window)
@@ -264,18 +269,6 @@ $(() => {
 			const visibleVideos = figures.filter(':visible'),
 				topVideo = visibleVideos.filter('.even').children()[0],
 				bottomVideo = visibleVideos.filter('.odd').children()[0];
-				$(visibleVideos.filter('.even'))
-					.find('.poster')
-					.css('display', 'none');
-					
-
-				$(visibleVideos.filter('.odd'))
-					.find('.poster')
-					.css('display', 'flex');
-
-				topVideo.tagName === 'VIDEO' && topVideo.paused ? topVideo.play() : null;  
-				bottomVideo.tagName === 'VIDEO' && !bottomVideo.paused ? bottomVideo.pause() : null;  
-
 			
 			if (e.clientY < document.documentElement.clientHeight / 2) 
 			{
