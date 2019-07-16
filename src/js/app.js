@@ -240,23 +240,52 @@ $(() => {
 	const desktopHandleMiniatures = function () {
 		const figures = $('.content-wrapper figure:not(.theme)')
 
-		$(window).on('mousemove', function (e) {
-			e = e || window.event;
-			const visibleVideos = figures.filter(':visible'),
-				topVideo = visibleVideos[1].children[0],
-				bottomVideo = visibleVideos[0].children[0]
-				console.log(bottomVideo);
-				
-
-			if (e.clientY < document.documentElement.clientHeight / 2) 
-			{
-				//hide top video poster, show bottom video poster, play top pause bottom video
-				$(visibleVideos[1])
+		//initial show and play proper video
+		const visibleVideos = figures.filter(':visible'),
+			topVideo = visibleVideos.filter('.even').children()[0],
+			bottomVideo = visibleVideos.filter('.odd').children()[0];
+			$(visibleVideos.filter('.even'))
 					.find('.poster')
 					.css('display', 'none');
 					
 
-				$(visibleVideos[0])
+				$(visibleVideos.filter('.odd'))
+					.find('.poster')
+					.css('display', 'flex');
+
+				topVideo.tagName === 'VIDEO' && topVideo.paused ? topVideo.play() : null;  
+				bottomVideo.tagName === 'VIDEO' && !bottomVideo.paused ? bottomVideo.pause() : null;  
+
+
+		$(window)
+		.off('mousemove scroll')
+		.on('mousemove', function (e) {
+			e = e || window.event;
+			const visibleVideos = figures.filter(':visible'),
+				topVideo = visibleVideos.filter('.even').children()[0],
+				bottomVideo = visibleVideos.filter('.odd').children()[0];
+				$(visibleVideos.filter('.even'))
+					.find('.poster')
+					.css('display', 'none');
+					
+
+				$(visibleVideos.filter('.odd'))
+					.find('.poster')
+					.css('display', 'flex');
+
+				topVideo.tagName === 'VIDEO' && topVideo.paused ? topVideo.play() : null;  
+				bottomVideo.tagName === 'VIDEO' && !bottomVideo.paused ? bottomVideo.pause() : null;  
+
+			
+			if (e.clientY < document.documentElement.clientHeight / 2) 
+			{
+				//hide top video poster, show bottom video poster, play top pause bottom video
+				$(visibleVideos.filter('.even'))
+					.find('.poster')
+					.css('display', 'none');
+					
+
+				$(visibleVideos.filter('.odd'))
 					.find('.poster')
 					.css('display', 'flex');
 
@@ -265,10 +294,10 @@ $(() => {
 			} 
 			else 
 			{
-				$(visibleVideos[0])
+				$(visibleVideos.filter('.odd'))
 					.find('.poster')
 					.css('display', 'none');
-				$(visibleVideos[1])
+				$(visibleVideos.filter('.even'))
 					.find('.poster')
 					.css('display', 'flex');
 				
@@ -277,6 +306,8 @@ $(() => {
 
 		})
 	}
+	
+	
 	/* const desktopHandleMiniatures = function () {
 		$('.image')
 			.off('mouseenter mouseleave scroll')
@@ -292,7 +323,7 @@ $(() => {
 
 	const mobileHandleMiniatures = function () {
 		$(window)
-			.off('mouseenter mouseleave scroll')
+			.off('mousemove scroll')
 			.on('scroll', function () {
 
 				const
@@ -305,9 +336,9 @@ $(() => {
 					//video must have muted attr for this code to work!!!
 					const video = el.querySelector('video');
 					if (el === topVideo) {
-						video.readyState === 4 ? video.play() : null;
+						video.paused ? video.play() : null;
 					} else {
-						video.pause();
+						!video.paused ? video.pause(): null;
 					}
 
 				})
