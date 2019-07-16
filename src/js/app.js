@@ -98,10 +98,12 @@ $(() => {
 				$(this).prev().show()
 			}
 
+			$(images[counter]).children()[0].tagName === 'VIDEO' ? $(images[counter]).children()[0].pause() : null;
 			$(images[counter]).hide();
 			counter += 2;
 			imagesInfo.leftIndex = counter;
-			$(images[counter]).show();
+			$(images[counter]).show();			
+			$(images[counter]).children()[0].tagName === 'VIDEO' ? $(images[counter]).children()[0].play() : null;
 
 			if (!(images.length % 2) && counter === images.length - 2) {
 				$(this).hide();
@@ -121,11 +123,13 @@ $(() => {
 			} else if (images.length % 2 && counter === images.length - 1) {
 				$(this).next().show()
 			}
-
+			$(images[counter]).children()[0].tagName === 'VIDEO' ? $(images[counter]).children()[0].pause() : null;
 			$(images[counter]).hide();
 			counter -= 2;
 			imagesInfo.leftIndex = counter;
 			$(images[counter]).show();
+			$(images[counter]).children()[0].tagName === 'VIDEO' ? $(images[counter]).children()[0].play() : null;
+
 
 			if (counter === index) {
 				$(this).hide()
@@ -145,10 +149,13 @@ $(() => {
 				$(this).prev().show()
 			}
 
+			$(images[counter]).children()[0].tagName === 'VIDEO' ? $(images[counter]).children()[0].pause() : null;
 			$(images[counter]).hide();
 			counter += 2;
 			imagesInfo.rightIndex = counter;
 			$(images[counter]).show();
+			$(images[counter]).children()[0].tagName === 'VIDEO' ? $(images[counter]).children()[0].play() : null;
+
 
 			if (!(images.length % 2) && counter === images.length - 1) {
 				$(this).hide();
@@ -171,10 +178,12 @@ $(() => {
 				
 			}
 
+			$(images[counter]).children()[0].tagName === 'VIDEO' ? $(images[counter]).children()[0].pause() : null;
 			$(images[counter]).hide();
 			counter -= 2;
 			imagesInfo.rightIndex = counter;
 			$(images[counter]).show();
+			$(images[counter]).children()[0].tagName === 'VIDEO' ? $(images[counter]).children()[0].play() : null;
 
 			if (counter === index) {
 				$(this).hide()

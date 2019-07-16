@@ -62,6 +62,36 @@ main.main-container{
     .row{
       height: 72px;
     }
+	}
+	@include mQ(2000px) {
+    width: 1901px;
+    .row{
+      height: 76px;
+    }
+	}
+	@include mQ(2100px) {
+    width: 2001px;
+    .row{
+      height: 80px;
+    }
+	}
+	@include mQ(2200px) {
+    width: 2101px;
+    .row{
+      height: 84px;
+    }
+	}
+	@include mQ(2300px) {
+    width: 2201px;
+    .row{
+      height: 88px;
+    }
+	}
+	@include mQ(2400px) {
+    width: 2301px;
+    .row{
+      height: 92px;
+    }
   }
 
 
