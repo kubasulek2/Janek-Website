@@ -250,10 +250,12 @@
       position: absolute;
       display: block;
       width: 14%;
-      top: 63.5%;
-      left: 68%;
+      top: 49.5%;
+      left: 65%;
 
       img{
+				position: absolute;
+				top:0;
         width: 100%;
         display: none;
         user-select: none;

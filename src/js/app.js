@@ -45,44 +45,19 @@ $(() => {
 	};
 
 	// drawing themes
-	let prevNum = 2;  // first displayed image index
-	let disableThemeChange = false;
+
 
 	const drawTheme = (themes) => {
-
-		if (disableThemeChange) return;
-
-		//image index can be larger than actual images index, to simulate drawing no image
-		let draw = Math.floor(Math.random() * (themes.length + 2));
-		let disableTime = Math.floor(Math.random() * (20 - 10)) + 10;
-
-
-		if (draw === prevNum || draw === 1) { //image 1 is restricted to show after another image
-			drawTheme(themes);
-			return;
-		} else {
-
-			if (prevNum === 0) {
-				prevNum = 1;
-				setTimeout(() => {
-					themes.each(function (i, e) {
-						i === 1 ? $(e).fadeIn(500) : $(e).hide();
-					})
-				}, disableTime * 500);
-
-			} else {
-				prevNum = draw;
-				setTimeout(() => {
-					themes.each(function (i, e) {
-						i === draw ? $(e).fadeIn(500) : $(e).hide();
-					})
-				}, disableTime * 500);
-			}
-		}
-		disableThemeChange = true
-		setTimeout(() => {
-			disableThemeChange = false;
-		}, disableTime * 1000);
+		const elTheme = $('.image:visible')
+			.filter( (i,e) => e.dataset.theme !== undefined)
+			.first()
+			.data('theme')
+			console.log(elTheme);
+		
+		themes.each((i,e) => {
+			e.dataset.theme === elTheme ? $(e).fadeIn(400) : $(e).fadeOut(400);
+		})
+		
 
 	};
 
@@ -92,7 +67,7 @@ $(() => {
 		
 		$(".nav-left > .next").on("click", function () {
 
-			drawTheme(themes);
+			
 
 			if (counter === index) {
 				$(this).prev().show()
@@ -110,12 +85,12 @@ $(() => {
 			} else if (images.length % 2 && counter === images.length - 1) {
 				$(this).hide()
 			}
+			drawTheme(themes);
 
 		});
 
 		$(".nav-left > .prev").on("click", function () {
 
-			drawTheme(themes);
 
 			if (!(images.length % 2) && counter === images.length - 2) {
 				$(this).next().show();
@@ -135,6 +110,7 @@ $(() => {
 				$(this).hide()
 			}
 
+			drawTheme(themes);
 		})
 	};
 
@@ -143,7 +119,6 @@ $(() => {
 
 		$(".nav-right > .next").on("click", function () {
 
-			drawTheme(themes);
 
 			if (counter === index) {
 				$(this).prev().show()
@@ -162,12 +137,11 @@ $(() => {
 			} else if (images.length % 2 && counter === images.length - 2) {
 				$(this).hide()
 			}
-
+			drawTheme(themes);
 		});
 
 		$(".nav-right > .prev").on("click", function () {
 
-			drawTheme(themes);
 
 			if (!(images.length % 2) && counter === images.length - 1) {
 				$(this).next().show();
@@ -189,6 +163,7 @@ $(() => {
 				$(this).hide()
 			}
 
+			drawTheme(themes);
 		})
 	};
 
@@ -196,11 +171,9 @@ $(() => {
 		if($('body').hasClass('multimedia')){
 			const images = $('.image');
 			const themes = $('.theme img');
-
+			
 			let leftIndex = 0;
 			let rightIndex = 1;
-			themes.eq(2).show();
-			//drawTheme(themes);
 			handleLeftGallery(leftIndex, images, themes);
 			handleRightGallery(rightIndex, images, themes);
 
@@ -249,6 +222,7 @@ $(() => {
 
 				}
 			});
+			drawTheme(themes);
 		}
 	};
 	const desktopHandleMiniatures = function () {
@@ -258,6 +232,7 @@ $(() => {
 		const visibleVideos = figures.filter(':visible'),
 			topVideo = visibleVideos.filter('.even').children()[0],
 			bottomVideo = visibleVideos.filter('.odd').children()[0];
+			
 			$(visibleVideos.filter('.even'))
 			.find('.poster')
 			.css('display', 'none');
@@ -308,20 +283,7 @@ $(() => {
 
 		})
 	}
-	
-	
-	/* const desktopHandleMiniatures = function () {
-		$('.image')
-			.off('mouseenter mouseleave scroll')
-			.on('mouseenter mouseleave', function (event) {
 
-				const video = this.querySelector('video');
-				if (event.type === 'mouseenter')
-					video !== null ? video.play() : null;
-				else
-					video !== null ? video.pause() : null;
-			});
-	} */
 
 	const mobileHandleMiniatures = function () {
 		$(window)
