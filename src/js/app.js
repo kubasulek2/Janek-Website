@@ -52,7 +52,7 @@ $(() => {
 			.filter( (i,e) => e.dataset.theme !== undefined)
 			.first()
 			.data('theme')
-			console.log(elTheme);
+		
 		
 		themes.each((i,e) => {
 			e.dataset.theme === elTheme ? $(e).fadeIn(400) : $(e).fadeOut(400);
