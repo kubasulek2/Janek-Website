@@ -527,7 +527,7 @@ main.main-container .contact {
   padding: 4vw 0 22vw 3vw;
   width: 36%;
   margin: 3rem 0 0 18%;
-  background: url(../../images/mobile/Prostokat-blekitny-mobilna.png);
+  background: url(../images/mobile/Prostokat-blekitny-mobilna.png);
 }
 
 main.main-container .vortex {
@@ -1041,7 +1041,7 @@ main.main-container .vortex {
 
 .main-container .contact-details {
   width: 85%;
-  background: url(../../images/contact/Prostokat-faktura_kontakt.png);
+  background: url(../images/contact/Prostokat-faktura_kontakt.png);
   text-decoration: underline;
   margin: 4em auto;
   padding: 2.2em;
