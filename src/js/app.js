@@ -241,7 +241,7 @@ $(() => {
 		$(visibleVideos.filter('.odd'))
 			.find('.poster')
 			.css('display', 'flex');
-
+		 
 		topVideo.tagName === 'VIDEO' && topVideo.paused ? topVideo.play() : null;  
 		bottomVideo.tagName === 'VIDEO' && !bottomVideo.paused ? bottomVideo.pause() : null;  
 
@@ -286,6 +286,8 @@ $(() => {
 
 
 	const mobileHandleMiniatures = function () {
+
+		$('.content-wrapper figure:not(.theme,.photos)').find('video')[0].play();
 		$(window)
 			.off('mousemove scroll')
 			.on('scroll', function () {
@@ -300,7 +302,9 @@ $(() => {
 					//video must have muted attr for this code to work!!!
 					const video = el.querySelector('video');
 					if (el === topVideo) {
-						video.paused ? video.play() : null;
+						//moze lepiej
+						// video.paused && video.readyState === 4 ? video.play() : null;
+						video.paused && video.readyState === 4 ? video.play() : null;
 					} else {
 						!video.paused ? video.pause(): null;
 					}
