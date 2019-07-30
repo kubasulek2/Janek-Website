@@ -304,7 +304,7 @@ $(() => {
 					if (el === topVideo) {
 						//moze lepiej
 						// video.paused && video.readyState === 4 ? video.play() : null;
-						video.paused && video.readyState === 4 ? video.play() : null;
+						video.paused ? video.play() : null;
 					} else {
 						!video.paused ? video.pause(): null;
 					}
