@@ -11,7 +11,7 @@
   @include mQLandscape{
     .projects.personal{
       display: block;
-      top: 15.41%;
+      top: calc(15.41% + 1px);
 
       li:nth-child(2), li:first-child{
         border-bottom: none;

@@ -135,7 +135,7 @@
   @include mQLandscape{
     .projects.commercial{
       display: block;
-      top: 15.41%;
+      top: calc(15.41% + 1px);
 
       li:last-child, li:first-child{
         border-bottom: none;
@@ -177,31 +177,31 @@
 			}
 
       &:nth-of-type(odd){
-        top: 53.84%;
-        left: 28%;
+        top: calc(53.84% + 1px);
+        left: calc(28% + 1px);
       }
 
       &:nth-of-type(even){
-        top: 7.73%;
-        left: 52%;
+        top: calc(7.73% + 1px);
+        left: calc(52% + 1px);
       }
       &.xlarge{
-        width: 32.05%;
+        width: calc(32% - 1px);
       }
       &.large{
-        width: 28.05%;
+        width: calc(28% - 1px);
       }
       &.medium-large{
-        width: 24.05%;
+        width: calc(24% - 1px);
       }
       &.medium{
-        width: 20.05%;
+        width: calc(20% - 1px);
       }
       &.small{
-        width: 16.05%;
+        width: calc(16% - 1px);
       }
       &.xsmall{
-        width: 12.05%;
+        width: calc(12% - 1px);
       }
     }
 

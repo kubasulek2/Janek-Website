@@ -40,14 +40,14 @@ main.main-container{
     padding: 4vw 0 9vw 3vw;
     width: 45%;
     margin: 5rem 0 0 40%;
-    background: url("../../images/composition/Prostokąt-faktura.png");
+    background: url("../../images/composition/Prostokat-faktura.png");
   }
 
   .contact{
     padding: 4vw 0 22vw 3vw;
     width: 36%;
     margin: 3rem 0 0 18%;
-    background: url("../../images/mobile/Prostokąt-blekitny-mobilna.png");
+    background: url("../../images/mobile/Prostokat-blekitny-mobilna.png");
   }
 
   .vortex{
@@ -55,24 +55,24 @@ main.main-container{
     padding: 4vw 0 1vw 0;
     width: 34%;
     margin: 3rem 0 4rem 50%;
-    background: url("../../images/composition/Prostokąt 1.png");
+    background: url("../../images/composition/Prostokat 1.png");
   }
 
   // for wider screens
 
   @include mQLandscape{
 
-
+		
 
     .projects, .logo, .author, .contact, .vortex{
       position: absolute;
       margin: 0;
-      z-index: 2;
+			z-index: 2;
     }
 
     .projects, .contact, .vortex{
       padding: 0;
-      height: 30.75%;
+      height: calc(30.75% - 2px);
 			font-size: 1.2rem;
 	
       li{
@@ -108,27 +108,27 @@ main.main-container{
     }
 
     .projects{
-      left: 20%;
-      top: 46.15%;
-      width: 20.05%;
+      left: calc(20% + 1px);
+      top: calc(46.15% + 1px);
+      width: calc(20.05% - 2px);
       padding: 1.2em 0 0 1em;
 
     }
 
     .contact{
       background: url("../../images/composition/square-white.png");
-      left: 56%;
-      top: 23.10%;
-      width: 16.05%;
+      left: calc(56% + 1px);
+      top: calc(23.10% + 1px);
+      width: calc(16% - 2px);
       padding: 1em 0 0 1.2em;
 
 
     }
 
     .vortex{
-      left: 72%;
-      top: 53.83%;
-      width: 16.05%;
+      left: calc(72% + 1px);
+      top: calc(53.83% + 1px);
+      width: calc(16% - 2px);
       padding: 1em 1.2em 0 1.2em;
     }
 

@@ -520,14 +520,14 @@ main.main-container .projects {
   padding: 4vw 0 9vw 3vw;
   width: 45%;
   margin: 5rem 0 0 40%;
-  background: url(../images/composition/Prostokąt-faktura.png);
+  background: url(../images/composition/Prostokat-faktura.png);
 }
 
 main.main-container .contact {
   padding: 4vw 0 22vw 3vw;
   width: 36%;
   margin: 3rem 0 0 18%;
-  background: url(../images/mobile/Prostokąt-blekitny-mobilna.png);
+  background: url(../../images/mobile/Prostokat-blekitny-mobilna.png);
 }
 
 main.main-container .vortex {
@@ -535,7 +535,7 @@ main.main-container .vortex {
   padding: 4vw 0 1vw 0;
   width: 34%;
   margin: 3rem 0 4rem 50%;
-  background: url("../images/composition/Prostokąt 1.png");
+  background: url("../images/composition/Prostokat 1.png");
 }
 
 @media (min-width:1024px) and (orientation:landscape),(min-width:1200px) {
@@ -553,7 +553,7 @@ main.main-container .vortex {
   main.main-container .projects,
   main.main-container .vortex {
     padding: 0;
-    height: 30.75%;
+    height: calc(30.75% - 2px);
     font-size: 1.2rem;
   }
 
@@ -595,24 +595,24 @@ main.main-container .vortex {
   }
 
   main.main-container .projects {
-    left: 20%;
-    top: 46.15%;
-    width: 20.05%;
+    left: calc(20% + 1px);
+    top: calc(46.15% + 1px);
+    width: calc(20.05% - 2px);
     padding: 1.2em 0 0 1em;
   }
 
   main.main-container .contact {
     background: url(../images/composition/square-white.png);
-    left: 56%;
-    top: 23.1%;
-    width: 16.05%;
+    left: calc(56% + 1px);
+    top: calc(23.1% + 1px);
+    width: calc(16% - 2px);
     padding: 1em 0 0 1.2em;
   }
 
   main.main-container .vortex {
-    left: 72%;
-    top: 53.83%;
-    width: 16.05%;
+    left: calc(72% + 1px);
+    top: calc(53.83% + 1px);
+    width: calc(16% - 2px);
     padding: 1em 1.2em 0 1.2em;
   }
 }
@@ -866,7 +866,7 @@ main.main-container .vortex {
 @media (min-width:1024px) and (orientation:landscape),(min-width:1200px) {
   .main-container .projects.commercial {
     display: block;
-    top: 15.41%;
+    top: calc(15.41% + 1px);
   }
 
   .main-container .projects.commercial li:first-child,
@@ -915,37 +915,37 @@ main.main-container .vortex {
   }
 
   .main-container .image:nth-of-type(odd) {
-    top: 53.84%;
-    left: 28%;
+    top: calc(53.84% + 1px);
+    left: calc(28% + 1px);
   }
 
   .main-container .image:nth-of-type(even) {
-    top: 7.73%;
-    left: 52%;
+    top: calc(7.73% + 1px);
+    left: calc(52% + 1px);
   }
 
   .main-container .image.xlarge {
-    width: 32.05%;
+    width: calc(32% - 1px);
   }
 
   .main-container .image.large {
-    width: 28.05%;
+    width: calc(28% - 1px);
   }
 
   .main-container .image.medium-large {
-    width: 24.05%;
+    width: calc(24% - 1px);
   }
 
   .main-container .image.medium {
-    width: 20.05%;
+    width: calc(20% - 1px);
   }
 
   .main-container .image.small {
-    width: 16.05%;
+    width: calc(16% - 1px);
   }
 
   .main-container .image.xsmall {
-    width: 12.05%;
+    width: calc(12% - 1px);
   }
 
   .main-container .nav-left div,
@@ -1030,7 +1030,7 @@ main.main-container .vortex {
 @media (min-width:1024px) and (orientation:landscape),(min-width:1200px) {
   .main-container .projects.personal {
     display: block;
-    top: 15.41%;
+    top: calc(15.41% + 1px);
   }
 
   .main-container .projects.personal li:first-child,
@@ -1041,7 +1041,7 @@ main.main-container .vortex {
 
 .main-container .contact-details {
   width: 85%;
-  background: url(../images/contact/Prostokąt-faktura_kontakt.png);
+  background: url(../../images/contact/Prostokat-faktura_kontakt.png);
   text-decoration: underline;
   margin: 4em auto;
   padding: 2.2em;
